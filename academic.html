@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="th" data-lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="../assets/logo-smo-transparent.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ปฏิทินการศึกษา | SMO HST Space</title>
+  <meta name="description" content="ปฏิทินการศึกษา วันเปิด-ปิดภาคเรียน และวันสำคัญทางการศึกษาของคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/portal.css?v=12" />
+  <style>
+    /* ===== Academic calendar page ===== */
+    .term-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+    .term-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      transition: all var(--tr);
+    }
+    .term-card:hover { transform: translateY(-4px); box-shadow: var(--sh-md); border-color: var(--green); }
+    .term-card__head {
+      background: linear-gradient(135deg, var(--navy), var(--green));
+      color: #fff;
+      padding: 22px 24px;
+    }
+    .term-card__head .term-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .term-card__head h3 { font-family: var(--font-display); font-size: 1.3rem; margin: 0; }
+    .term-card__body { padding: 8px 24px 22px; }
+    .term-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .term-row:last-child { border-bottom: none; }
+    .term-row .ico {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      display: grid; place-items: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+    .term-row.open .ico { background: var(--success-bg); color: var(--green); }
+    .term-row.close .ico { background: var(--yellow-soft); color: var(--navy); }
+    .term-row .label { font-size: 0.82rem; color: var(--text-2); font-weight: 600; }
+    .term-row .date { font-family: var(--font-display); font-size: 1.05rem; color: var(--navy); font-weight: 700; }
+
+    /* Key dates list */
+    .keydates {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+    .keydate {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--border);
+      transition: background var(--tr);
+    }
+    .keydate:last-child { border-bottom: none; }
+    .keydate:hover { background: var(--bg); }
+    .keydate__date {
+      flex-shrink: 0;
+      width: 88px;
+      text-align: center;
+      background: var(--bg-alt);
+      color: var(--navy);
+      border-radius: 10px;
+      padding: 8px 4px;
+      line-height: 1.2;
+    }
+    .keydate__date strong { display: block; font-size: 1.35rem; font-weight: 800; }
+    .keydate__date span { font-size: 0.72rem; font-weight: 600; }
+    .keydate__info { flex: 1; min-width: 0; }
+    .keydate__info h4 { font-family: var(--font-display); color: var(--navy); font-size: 1rem; margin: 0 0 2px; }
+    .keydate__info p { color: var(--text-2); font-size: 0.85rem; margin: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="ribbon">
+    <div class="ribbon-inner">
+      <span>
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span class="th">ราชวิทยาลัยจุฬาภรณ์ | คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</span>
+        <span class="en">Chulabhorn Royal Academy | Faculty of HST</span>
+      </span>
+      <span style="display:flex; gap:14px; align-items:center;">
+        <span class="ribbon-lang">
+          <button data-lang-btn="th" class="active">TH</button>
+          <button data-lang-btn="en">EN</button>
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <header class="portal-header">
+    <div class="portal-nav">
+      <a href="index.html" class="brand">
+        <img src="../assets/logo-smo-transparent.png" alt="SMO HST" />
+        <span class="brand-text">
+          <strong>SMO HST <span style="color:var(--green);">Space</span></strong>
+          <small class="th">สโมสรนักศึกษา คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small>
+          <small class="en">Student Association, Faculty of HST</small>
+        </span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html"><span class="th">หน้าหลัก</span><span class="en">Home</span></a>
+        <a href="index.html#announcements"><span class="th">ประกาศ</span><span class="en">Announcements</span></a>
+        <a href="contact.html"><span class="th">แจ้งปัญหา</span><span class="en">Report</span></a>
+        <a href="tools.html"><span class="th">บริการนักศึกษา</span><span class="en">Services</span></a>
+        <a href="activities.html"><span class="th">ปฏิทินกิจกรรม</span><span class="en">Activities</span></a>
+        <a href="index.html#departments"><span class="th">ฝ่าย</span><span class="en">Departments</span></a>
+        <a href="about.html"><span class="th">เกี่ยวกับเรา</span><span class="en">About</span></a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-eyebrow">Academic Calendar</span>
+      <h1 class="section-heading th">ปฏิทินการศึกษา</h1>
+      <h1 class="section-heading en">Academic Calendar</h1>
+      <p class="section-sub th">วันเปิด-ปิดภาคเรียน และกำหนดการสำคัญทางการศึกษา ปีการศึกษา 2569 คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์</p>
+      <p class="section-sub en">Semester open/close dates and key academic milestones for Academic Year 2026, Faculty of HST</p>
+
+      <!-- ===== Term cards ===== -->
+      <div class="term-grid">
+        <div class="term-card">
+          <div class="term-card__head">
+            <span class="term-tag th">ภาคเรียนที่ 1</span>
+            <span class="term-tag en">Semester 1</span>
+            <h3 class="th">ภาคการศึกษาที่ 1/2569</h3>
+            <h3 class="en">Semester 1/2026</h3>
+          </div>
+          <div class="term-card__body">
+            <div class="term-row open">
+              <div class="ico"><i class="fa-solid fa-door-open"></i></div>
+              <div>
+                <div class="label th">วันเปิดภาคเรียน</div>
+                <div class="label en">Semester opens</div>
+                <div class="date th">3 สิงหาคม 2569</div>
+                <div class="date en">3 August 2026</div>
+              </div>
+            </div>
+            <div class="term-row close">
+              <div class="ico"><i class="fa-solid fa-door-closed"></i></div>
+              <div>
+                <div class="label th">วันปิดภาคเรียน</div>
+                <div class="label en">Semester closes</div>
+                <div class="date th">7 ธันวาคม 2569</div>
+                <div class="date en">7 December 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="term-card">
+          <div class="term-card__head">
+            <span class="term-tag th">ภาคเรียนที่ 2</span>
+            <span class="term-tag en">Semester 2</span>
+            <h3 class="th">ภาคการศึกษาที่ 2/2569</h3>
+            <h3 class="en">Semester 2/2026</h3>
+          </div>
+          <div class="term-card__body">
+            <div class="term-row open">
+              <div class="ico"><i class="fa-solid fa-door-open"></i></div>
+              <div>
+                <div class="label th">วันเปิดภาคเรียน</div>
+                <div class="label en">Semester opens</div>
+                <div class="date th">4 มกราคม 2570</div>
+                <div class="date en">4 January 2027</div>
+              </div>
+            </div>
+            <div class="term-row close">
+              <div class="ico"><i class="fa-solid fa-door-closed"></i></div>
+              <div>
+                <div class="label th">วันปิดภาคเรียน</div>
+                <div class="label en">Semester closes</div>
+                <div class="date th">10 พฤษภาคม 2570</div>
+                <div class="date en">10 May 2027</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Key dates ===== -->
+  <section class="section" style="background: var(--bg-alt);">
+    <div class="container">
+      <span class="section-eyebrow">Key Dates</span>
+      <h2 class="section-heading th">กำหนดการสำคัญ</h2>
+      <h2 class="section-heading en">Important Dates</h2>
+      <p class="section-sub th">วันสำคัญทางการศึกษาที่ควรทราบ เรียงตามลำดับเวลา</p>
+      <p class="section-sub en">Key academic dates in chronological order</p>
+
+      <div class="keydates">
+        <div class="keydate">
+          <div class="keydate__date"><strong>11</strong><span class="th">พ.ค. 69</span><span class="en">MAY 26</span></div>
+          <div class="keydate__info">
+            <h4 class="th">ปิดภาคการศึกษาที่ 2/2568</h4>
+            <h4 class="en">End of Semester 2/2025</h4>
+            <p class="th">สิ้นสุดปีการศึกษา 2568</p>
+            <p class="en">End of Academic Year 2025</p>
+          </div>
+        </div>
+        <div class="keydate">
+          <div class="keydate__date"><strong>3</strong><span class="th">ส.ค. 69</span><span class="en">AUG 26</span></div>
+          <div class="keydate__info">
+            <h4 class="th">เปิดภาคการศึกษาที่ 1/2569</h4>
+            <h4 class="en">Start of Semester 1/2026</h4>
+            <p class="th">เริ่มปีการศึกษา 2569</p>
+            <p class="en">Beginning of Academic Year 2026</p>
+          </div>
+        </div>
+        <div class="keydate">
+          <div class="keydate__date"><strong>7</strong><span class="th">ธ.ค. 69</span><span class="en">DEC 26</span></div>
+          <div class="keydate__info">
+            <h4 class="th">ปิดภาคการศึกษาที่ 1/2569</h4>
+            <h4 class="en">End of Semester 1/2026</h4>
+            <p class="th">สิ้นสุดภาคเรียนที่ 1</p>
+            <p class="en">End of first semester</p>
+          </div>
+        </div>
+        <div class="keydate">
+          <div class="keydate__date"><strong>4</strong><span class="th">ม.ค. 70</span><span class="en">JAN 27</span></div>
+          <div class="keydate__info">
+            <h4 class="th">เปิดภาคการศึกษาที่ 2/2569</h4>
+            <h4 class="en">Start of Semester 2/2026</h4>
+            <p class="th">เริ่มภาคเรียนที่ 2</p>
+            <p class="en">Beginning of second semester</p>
+          </div>
+        </div>
+        <div class="keydate">
+          <div class="keydate__date"><strong>10</strong><span class="th">พ.ค. 70</span><span class="en">MAY 27</span></div>
+          <div class="keydate__info">
+            <h4 class="th">ปิดภาคการศึกษาที่ 2/2569</h4>
+            <h4 class="en">End of Semester 2/2026</h4>
+            <p class="th">สิ้นสุดปีการศึกษา 2569</p>
+            <p class="en">End of Academic Year 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Link to activity calendar -->
+      <div class="board" style="margin-top:28px; padding: 22px 24px; display:flex; gap:20px; align-items:center; flex-wrap:wrap; justify-content:space-between;">
+        <div>
+          <h3 style="font-family:var(--font-display); color:var(--navy); font-size:1.05rem; margin-bottom:4px;">
+            <span class="th">ดูกิจกรรมและโครงการรายวัน</span>
+            <span class="en">See daily activities &amp; events</span>
+          </h3>
+          <p style="color:var(--text-2); font-size:0.9rem; margin:0;">
+            <span class="th">ปฏิทินกิจกรรมแสดงกิจกรรม โครงการ และอีเวนต์ของสโมสรแบบรายวัน คลิกดูรายละเอียดได้</span>
+            <span class="en">The activity calendar shows day-by-day events and projects — click any for details</span>
+          </p>
+        </div>
+        <a href="activities.html" class="btn btn-primary">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span class="th">เปิดปฏิทินกิจกรรม</span><span class="en">Open Activity Calendar</span>
+        </a>
+      </div>
+
+      <p style="text-align:center; margin-top:18px; color:var(--text-3); font-size:0.82rem;">
+        <span class="th">* กำหนดการอาจมีการเปลี่ยนแปลง โปรดตรวจสอบประกาศทางการจากคณะอีกครั้ง</span>
+        <span class="en">* Dates may change — please confirm with official faculty announcements</span>
+      </p>
+    </div>
+  </section>
+
+  <footer class="portal-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand" style="color:#fff;">
+            <img src="../assets/logo-smo-transparent.png" alt="SMO HST" style="background:#fff; border-radius:8px; padding:4px;" />
+            <span class="brand-text"><strong>SMO HST Space</strong><small class="th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small><small class="en">Faculty of Health Science Technology</small></span>
+          </div>
+          <p class="th">สโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์</p>
+          <p class="en">HST Student Association, Chulabhorn Royal Academy</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="th">เมนู</h4><h4 class="en">Menu</h4>
+          <ul>
+            <li><a href="index.html"><span class="th">หน้าหลัก</span><span class="en">Home</span></a></li>
+            <li><a href="tools.html"><span class="th">บริการนักศึกษา</span><span class="en">Services</span></a></li>
+            <li><a href="activities.html"><span class="th">ปฏิทินกิจกรรม</span><span class="en">Activity Calendar</span></a></li>
+            <li><a href="academic.html"><span class="th">ปฏิทินการศึกษา</span><span class="en">Academic Calendar</span></a></li>
+            <li><a href="contact.html"><span class="th">แจ้งปัญหา</span><span class="en">Report</span></a></li>
+            <li><a href="about.html"><span class="th">เกี่ยวกับเรา</span><span class="en">About</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="th">ทางลัด</h4><h4 class="en">Quick Links</h4>
+          <ul>
+            <li><a href="https://hst.cra.ac.th" target="_blank" rel="noopener">เว็บคณะ HST</a></li>
+            <li><a href="https://www.cra.ac.th" target="_blank" rel="noopener">ราชวิทยาลัยจุฬาภรณ์</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="th">ติดต่อ</h4><h4 class="en">Contact</h4>
+          <ul>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:smohst2026@gmail.com">smohst2026@gmail.com</a></li>
+            <li><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/smo.hst/" target="_blank" rel="noopener">@smo.hst</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span class="th">© 2026 SMO HST Space</span><span class="en">© 2026 SMO HST Space</span></div>
+    </div>
+  </footer>
+
+  <script src="js/portal.js?v=12"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="th" data-lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="../assets/logo-smo-transparent.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>บริการนักศึกษา | SMO HST Space</title>
+  <meta name="description" content="บริการนักศึกษาและช่องทางต่างๆ ของสโมสรนักศึกษา HST — ระบบการศึกษา LINE OA และลิงก์สำคัญ กรองตามประเภทหรือค้นหาได้" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/portal.css?v=13" />
+</head>
+<body>
+
+  <div class="ribbon">
+    <div class="ribbon-inner">
+      <span>
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span class="th">ราชวิทยาลัยจุฬาภรณ์ | คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</span>
+        <span class="en">Chulabhorn Royal Academy | Faculty of HST</span>
+      </span>
+      <span style="display:flex; gap:14px; align-items:center;">
+        <span class="ribbon-lang">
+          <button data-lang-btn="th" class="active">TH</button>
+          <button data-lang-btn="en">EN</button>
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <header class="portal-header">
+    <div class="portal-nav">
+      <a href="index.html" class="brand">
+        <img src="../assets/logo-smo-transparent.png" alt="SMO HST" />
+        <span class="brand-text">
+          <strong>SMO HST <span style="color:var(--green);">Space</span></strong>
+          <small class="th">สโมสรนักศึกษา คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small>
+          <small class="en">Student Association, Faculty of HST</small>
+        </span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html"><span class="th">หน้าหลัก</span><span class="en">Home</span></a>
+        <a href="index.html#announcements"><span class="th">ประกาศ</span><span class="en">Announcements</span></a>
+        <a href="contact.html"><span class="th">แจ้งปัญหา</span><span class="en">Report</span></a>
+        <a href="tools.html" class="active"><span class="th">บริการนักศึกษา</span><span class="en">Services</span></a>
+        <a href="activities.html"><span class="th">ปฏิทินกิจกรรม</span><span class="en">Activities</span></a>
+        <a href="index.html#departments"><span class="th">ฝ่าย</span><span class="en">Departments</span></a>
+        <a href="about.html"><span class="th">เกี่ยวกับเรา</span><span class="en">About</span></a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-eyebrow">Student Services</span>
+      <h1 class="section-heading th">บริการนักศึกษา</h1>
+      <h1 class="section-heading en">Student Services</h1>
+      <p class="section-sub th">รวมบริการและช่องทางสำหรับนักศึกษา คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ — กรองตามประเภทหรือค้นหาชื่อได้</p>
+      <p class="section-sub en">All services and channels for HST students — filter by category or search by name</p>
+
+      <!-- Filter bar -->
+      <div class="filter-bar" id="toolFilter">
+        <button class="filter-chip active" data-cat="all"><span class="th">ทั้งหมด</span><span class="en">All</span></button>
+        <button class="filter-chip" data-cat="public"><span class="th">สาธารณะ</span><span class="en">Public</span></button>
+        <button class="filter-chip" data-cat="line"><span class="th">LINE OA</span><span class="en">LINE OA</span></button>
+        <button class="filter-chip" data-cat="academic"><span class="th">วิชาการ</span><span class="en">Academic</span></button>
+        <button class="filter-chip" data-cat="smo"><span class="th">สโมสร</span><span class="en">SMO</span></button>
+        <input type="text" id="toolSearch" class="filter-search" placeholder="ค้นหาบริการ / Search services..." />
+      </div>
+
+      <!-- Section: สำหรับทุกคน -->
+      <h3 style="font-family:var(--font-display); color:var(--navy); font-size:1.2rem; margin:14px 0 14px;">
+        <span class="th">สำหรับทุกคน</span><span class="en">For Everyone</span>
+      </h3>
+      <div class="tool-grid mb-3">
+        <a href="activities.html" data-tool="public smo" class="tool-card" style="text-decoration:none; color:inherit;">
+          <span class="tool-badge public">public</span>
+          <div class="tool-icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <h3 class="tool-title th">ปฏิทินกิจกรรม</h3>
+          <h3 class="tool-title en">Activity Calendar</h3>
+          <p class="tool-desc th">ดูกิจกรรม โครงการ และอีเวนต์ตลอดปีการศึกษา</p>
+          <p class="tool-desc en">Browse events all year, click for details</p>
+          <span class="tool-link"><span class="th">เปิด</span><span class="en">Open</span> <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="contact.html" data-tool="public smo" class="tool-card" style="text-decoration:none; color:inherit;">
+          <span class="tool-badge new">new</span>
+          <div class="tool-icon alt-purple"><i class="fa-solid fa-comment-dots"></i></div>
+          <h3 class="tool-title th">แจ้งปัญหา / ข้อเสนอแนะ</h3>
+          <h3 class="tool-title en">Report / Feedback</h3>
+          <p class="tool-desc th">ส่งความคิดเห็น ร้องเรียน — รองรับโหมดไม่ระบุตัวตน</p>
+          <p class="tool-desc en">Submit feedback or complaints, anonymous supported</p>
+          <span class="tool-link"><span class="th">ส่งเรื่อง</span><span class="en">Submit</span> <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="../services.html#registration" data-tool="public academic" class="tool-card" style="text-decoration:none; color:inherit;">
+          <span class="tool-badge public">public</span>
+          <div class="tool-icon alt-navy"><i class="fa-solid fa-id-card"></i></div>
+          <h3 class="tool-title th">ระบบบริการการศึกษา</h3>
+          <h3 class="tool-title en">Academic Services</h3>
+          <p class="tool-desc th">ลงทะเบียนเรียน เพิ่ม-ถอน ตรวจผลการเรียน ตารางเรียน-สอบ</p>
+          <p class="tool-desc en">Register, drop courses, grades, schedules</p>
+          <span class="tool-link"><span class="th">เข้าใช้</span><span class="en">Open</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a href="../services.html#elearning" data-tool="public academic" class="tool-card" style="text-decoration:none; color:inherit;">
+          <span class="tool-badge public">public</span>
+          <div class="tool-icon"><i class="fa-solid fa-laptop-file"></i></div>
+          <h3 class="tool-title th">งานทะเบียนนักศึกษา PCCMS</h3>
+          <h3 class="tool-title en">Registration (PCCMS)</h3>
+          <p class="tool-desc th">คำร้องขอเอกสาร — ใบรับรอง Transcript คุณวุฒิ (TH/EN)</p>
+          <p class="tool-desc en">Request academic documents — certificates &amp; transcripts</p>
+          <span class="tool-link"><span class="th">เข้าใช้</span><span class="en">Open</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a href="../services.html#library" data-tool="public academic" class="tool-card" style="text-decoration:none; color:inherit;">
+          <span class="tool-badge public">public</span>
+          <div class="tool-icon alt-yellow"><i class="fa-solid fa-book-open-reader"></i></div>
+          <h3 class="tool-title th">ห้องสมุดออนไลน์ CRA</h3>
+          <h3 class="tool-title en">CRA Online Library</h3>
+          <p class="tool-desc th">ฐานข้อมูล วารสารวิชาการ eBook วิทยาศาสตร์สุขภาพ</p>
+          <p class="tool-desc en">Databases, journals, eBooks, health science resources</p>
+          <span class="tool-link"><span class="th">เข้าใช้</span><span class="en">Open</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a href="../services.html#email" data-tool="public smo" class="tool-card" style="text-decoration:none; color:inherit;">
+          <span class="tool-badge public">public</span>
+          <div class="tool-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+          <h3 class="tool-title th">HST Activities (ชม.กิจกรรม)</h3>
+          <h3 class="tool-title en">HST Activity Hours</h3>
+          <p class="tool-desc th">ตรวจสอบชั่วโมงกิจกรรม จิตอาสา นักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</p>
+          <p class="tool-desc en">Check activity hours and volunteer credits</p>
+          <span class="tool-link"><span class="th">เข้าใช้</span><span class="en">Open</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <!-- ระบบยืม-คืนอุปกรณ์ — แนวยาว (กำลังพัฒนา) -->
+        <div data-tool="public smo" class="tool-wide is-soon">
+          <div class="tool-icon alt-navy"><i class="fa-solid fa-boxes-stacked"></i></div>
+          <div class="wide-body">
+            <h3>
+              <span class="th">ระบบยืม-คืนอุปกรณ์</span><span class="en">Equipment Borrowing System</span>
+              <span class="soon-tag th">กำลังพัฒนา</span><span class="soon-tag en">In development</span>
+            </h3>
+            <p class="th">ยืม-คืนอุปกรณ์ของสโมสรนักศึกษา จองล่วงหน้าและตรวจสอบสถานะออนไลน์ — เร็วๆ นี้</p>
+            <p class="en">Borrow and return SMO equipment — reserve and track online, coming soon</p>
+          </div>
+          <span class="soon-badge">
+            <i class="fa-solid fa-clock"></i>
+            <span class="th">Coming soon...</span><span class="en">Coming soon...</span>
+          </span>
+        </div>
+
+        <!-- HST Ticket Pass — แนวยาว (กำลังพัฒนา) -->
+        <div data-tool="public smo" class="tool-wide is-soon">
+          <div class="tool-icon alt-navy"><i class="fa-solid fa-ticket"></i></div>
+          <div class="wide-body">
+            <h3>
+              <span class="th">HST Ticket Pass</span><span class="en">HST Ticket Pass</span>
+              <span class="soon-tag th">กำลังพัฒนา</span><span class="soon-tag en">In development</span>
+            </h3>
+            <p class="th">ระบบบัตรเข้าร่วมกิจกรรมและเช็คอินสำหรับนักศึกษา HST — เร็วๆ นี้</p>
+            <p class="en">Event pass &amp; check-in system for HST students — coming soon</p>
+          </div>
+          <span class="soon-badge">
+            <i class="fa-solid fa-clock"></i>
+            <span class="th">Coming soon...</span><span class="en">Coming soon...</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Section: LINE OA -->
+      <h3 id="line-oa" style="font-family:var(--font-display); color:var(--navy); font-size:1.2rem; margin:24px 0 14px;">
+        <i class="fa-brands fa-line" style="color:var(--green);"></i>
+        <span class="th">ช่องทาง LINE สำหรับนักศึกษา</span><span class="en">Student LINE Channels</span>
+      </h3>
+      <div class="tool-grid mb-3">
+        <a href="https://line.me/R/ti/p/@809jokzj" target="_blank" rel="noopener" data-tool="line public" class="tool-card" style="text-decoration:none; color:inherit;">
+          <div class="tool-icon alt-line"><i class="fa-brands fa-line"></i></div>
+          <h3 class="tool-title th">กิจการนักศึกษา รจภ.</h3>
+          <h3 class="tool-title en">Student Affairs (CRA)</h3>
+          <p class="tool-desc th">สอบถามกิจการนักศึกษา สวัสดิการ กิจกรรม CRA ผ่าน LINE OA</p>
+          <p class="tool-desc en">Student affairs, welfare, and activities support via LINE</p>
+          <span class="tool-link">LINE ID: @809jokzj <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a href="https://line.me/R/ti/p/@784ekbrv" target="_blank" rel="noopener" data-tool="line public" class="tool-card" style="text-decoration:none; color:inherit;">
+          <div class="tool-icon alt-line"><i class="fa-brands fa-line"></i></div>
+          <h3 class="tool-title th">ทุนและหอพัก รจภ.</h3>
+          <h3 class="tool-title en">Scholarships &amp; Dorm (CRA)</h3>
+          <p class="tool-desc th">สอบถามทุนการศึกษาและหอพักนักศึกษา CRA ผ่าน LINE OA</p>
+          <p class="tool-desc en">Scholarship and dormitory inquiries via LINE</p>
+          <span class="tool-link">LINE ID: @784ekbrv <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a href="https://line.me/R/ti/p/@424yiujc" target="_blank" rel="noopener" data-tool="line public academic" class="tool-card" style="text-decoration:none; color:inherit;">
+          <div class="tool-icon alt-line"><i class="fa-brands fa-line"></i></div>
+          <h3 class="tool-title th">งานทะเบียน PCCMS</h3>
+          <h3 class="tool-title en">Registration (PCCMS)</h3>
+          <p class="tool-desc th">สอบถามงานทะเบียน เอกสารการศึกษา ผ่าน LINE OA</p>
+          <p class="tool-desc en">Registration &amp; academic documents inquiries via LINE</p>
+          <span class="tool-link">LINE ID: @424yiujc <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a href="https://line.me/R/ti/p/@276idvdw" target="_blank" rel="noopener" data-tool="line public academic" class="tool-card" style="text-decoration:none; color:inherit;">
+          <div class="tool-icon alt-line"><i class="fa-brands fa-line"></i></div>
+          <h3 class="tool-title th">ห้องสมุด CRA</h3>
+          <h3 class="tool-title en">CRA Library</h3>
+          <p class="tool-desc th">บริการห้องสมุด ยืม-คืนหนังสือ ทรัพยากรการเรียนรู้ ผ่าน LINE OA</p>
+          <p class="tool-desc en">Library services and learning resources via LINE</p>
+          <span class="tool-link">LINE ID: @276idvdw <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+      </div>
+
+      <!-- Section: Related sites -->
+      <h3 style="font-family:var(--font-display); color:var(--navy); font-size:1.2rem; margin:24px 0 14px;">
+        <span class="th">เว็บไซต์ที่เกี่ยวข้อง</span><span class="en">Related Websites</span>
+      </h3>
+      <div class="tool-grid">
+        <a href="https://www.cra.ac.th" target="_blank" rel="noopener" data-tool="public" class="tool-card" style="text-decoration:none; color:inherit;">
+          <div class="tool-icon alt-navy"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="tool-title th">ราชวิทยาลัยจุฬาภรณ์</h3>
+          <h3 class="tool-title en">Chulabhorn Royal Academy</h3>
+          <p class="tool-desc th">เว็บไซต์หลักของสถาบัน</p>
+          <p class="tool-desc en">Main institute website</p>
+          <span class="tool-link">cra.ac.th <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a href="https://hst.cra.ac.th" target="_blank" rel="noopener" data-tool="public academic" class="tool-card" style="text-decoration:none; color:inherit;">
+          <div class="tool-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <h3 class="tool-title th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</h3>
+          <h3 class="tool-title en">Faculty of Health Science Technology</h3>
+          <p class="tool-desc th">เว็บไซต์คณะ ข้อมูลหลักสูตร ประกาศ</p>
+          <p class="tool-desc en">Faculty website — programs and announcements</p>
+          <span class="tool-link">hst.cra.ac.th <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="portal-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand" style="color:#fff;">
+            <img src="../assets/logo-smo-transparent.png" alt="SMO HST" style="background:#fff; border-radius:8px; padding:4px;" />
+            <span class="brand-text">
+              <strong>SMO HST Space</strong>
+              <small class="th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small>
+              <small class="en">Faculty of Health Science Technology</small>
+            </span>
+          </div>
+          <p class="th">สโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์</p>
+          <p class="en">HST Student Association, Chulabhorn Royal Academy</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="th">เมนู</h4><h4 class="en">Menu</h4>
+          <ul>
+            <li><a href="index.html"><span class="th">หน้าหลัก</span><span class="en">Home</span></a></li>
+            <li><a href="tools.html"><span class="th">บริการนักศึกษา</span><span class="en">Services</span></a></li>
+            <li><a href="activities.html"><span class="th">ปฏิทิน</span><span class="en">Calendar</span></a></li>
+            <li><a href="academic.html"><span class="th">ปฏิทินการศึกษา</span><span class="en">Academic Calendar</span></a></li>
+            <li><a href="contact.html"><span class="th">แจ้งปัญหา</span><span class="en">Report</span></a></li>
+            <li><a href="about.html"><span class="th">เกี่ยวกับเรา</span><span class="en">About</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="th">ทางลัด</h4><h4 class="en">Quick Links</h4>
+          <ul>
+            <li><a href="https://hst.cra.ac.th" target="_blank" rel="noopener">เว็บคณะ HST</a></li>
+            <li><a href="https://www.cra.ac.th" target="_blank" rel="noopener">ราชวิทยาลัยจุฬาภรณ์</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="th">ติดต่อ</h4><h4 class="en">Contact</h4>
+          <ul>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:smohst2026@gmail.com">smohst2026@gmail.com</a></li>
+            <li><i class="fa-brands fa-facebook"></i> <a href="https://www.facebook.com/smo.hst/" target="_blank" rel="noopener">SMO HST</a></li>
+            <li><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/smo.hst/" target="_blank" rel="noopener">@smo.hst</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="th">© 2026 SMO HST Space</span>
+        <span class="en">© 2026 SMO HST Space</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/portal.js?v=13"></script>
+</body>
+</html>
