@@ -2,446 +2,116 @@
 <html lang="th" data-lang="th">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="assets/logo-smo-transparent.png" /><link rel="apple-touch-icon" href="assets/logo-smo-transparent.png" />
+  <link rel="icon" type="image/png" href="../assets/logo-smo-transparent.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>เกี่ยวกับเรา | สโมสรนักศึกษา HST</title>
-  <meta name="description" content="เกี่ยวกับสโมสรนักศึกษา HST ราชวิทยาลัยจุฬาภรณ์ — วิสัยทัศน์ พันธกิจ แผนผังองค์กร ที่ปรึกษา และคณะกรรมการนักศึกษา ทั้ง 20 ตำแหน่ง" />
-  <meta name="keywords" content="เกี่ยวกับสโมสรนักศึกษา, HST, ราชวิทยาลัยจุฬาภรณ์, คณะกรรมการนักศึกษา, ที่ปรึกษา, แผนผังสโมสร, วิสัยทัศน์, พันธกิจ" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://smohst69.netlify.app/about" />
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="สโมสรนักศึกษา HST" />
-  <meta property="og:locale" content="th_TH" />
-  <meta property="og:url" content="https://smohst69.netlify.app/about" />
-  <meta property="og:title" content="เกี่ยวกับสโมสรนักศึกษา HST — ราชวิทยาลัยจุฬาภรณ์" />
-  <meta property="og:description" content="วิสัยทัศน์ พันธกิจ แผนผังสโมสร และคณะกรรมการนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ" />
-  <meta property="og:image" content="https://smohst69.netlify.app/assets/about-building.jpg" />
-  <meta property="og:image:alt" content="อาคารคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์" />
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="เกี่ยวกับสโมสรนักศึกษา HST" />
-  <meta name="twitter:description" content="วิสัยทัศน์ พันธกิจ และคณะกรรมการนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ" />
-  <meta name="twitter:image" content="https://smohst69.netlify.app/assets/about-building.jpg" />
+  <title>เกี่ยวกับเรา | SMO HST Space</title>
+  <meta name="description" content="เกี่ยวกับสโมสรนักศึกษา คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ — วิสัยทัศน์ พันธกิจ นโยบาย และทีมงาน" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css?v=1779500000" />
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap&subset=latin,thai" rel="stylesheet">
-  <style>
-    html[lang="th"], body {
-      font-family: 'Sarabun', 'Noto Sans Thai', system-ui, 'Segoe UI', sans-serif;
-      /* ให้ข้อความไทยตัดบรรทัดได้เมื่อยาวเกินกรอบ (กันล้นนอกจอบนมือถือ/แท็บเล็ต) */
-      word-break: normal;
-      overflow-wrap: break-word;
-      hyphens: none;
-      line-height: 1.7;
-    }
-    p.th, .th {
-      word-break: normal;
-      overflow-wrap: break-word;
-      hyphens: none;
-    }
-    /* helper: ใช้กับวลีสั้น ๆ ที่ไม่อยากให้ตัดบรรทัดเท่านั้น (อย่าใช้กับข้อความยาว) */
-    .no-break { white-space: nowrap; }
-
-    /* ===== ORG CHART SECTION ===== */
-    .orgchart-section {
-      background: linear-gradient(180deg, var(--color-yellow-soft) 0%, transparent 100%);
-    }
-    .orgchart-wrap {
-      position: relative;
-      background: var(--color-white);
-      padding: 30px;
-      border-radius: var(--radius-md);
-      box-shadow: 0 6px 20px rgba(45,106,79,0.10);
-      text-align: center;
-      cursor: zoom-in;
-      transition: all .3s ease;
-      max-width: 1100px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-    .orgchart-wrap::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: var(--radius-md);
-      border: 2px dashed transparent;
-      transition: border-color .3s ease;
-      pointer-events: none;
-    }
-    .orgchart-wrap:hover {
-      box-shadow: 0 14px 36px rgba(45,106,79,0.18);
-      transform: translateY(-3px);
-    }
-    .orgchart-wrap:hover::before {
-      border-color: var(--color-secondary);
-    }
-    .orgchart-img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      border-radius: var(--radius-sm);
-    }
-    .orgchart-zoom-hint {
-      position: absolute;
-      top: 22px; right: 22px;
-      background: rgba(12,59,46,0.92);
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      backdrop-filter: blur(4px);
-      pointer-events: none;
-      opacity: 0;
-      transform: translateY(-6px);
-      transition: all .25s ease;
-    }
-    .orgchart-wrap:hover .orgchart-zoom-hint {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    /* Always visible on touch devices */
-    @media (hover: none) {
-      .orgchart-zoom-hint { opacity: 1; transform: none; }
-    }
-
-    /* Lightbox */
-    .orgchart-lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: rgba(0,0,0,0.92);
-      display: grid;
-      place-items: center;
-      padding: 30px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .3s ease;
-    }
-    .orgchart-lightbox.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .orgchart-lightbox img {
-      max-width: 100%;
-      max-height: 95vh;
-      border-radius: 8px;
-      cursor: zoom-out;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-      transform: scale(0.92);
-      transition: transform .3s ease;
-    }
-    .orgchart-lightbox.open img { transform: scale(1); }
-    .orgchart-lightbox__close {
-      position: absolute;
-      top: 24px; right: 24px;
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-size: 1.35rem;
-      display: grid; place-items: center;
-      transition: all .2s ease;
-      backdrop-filter: blur(6px);
-    }
-    .orgchart-lightbox__close:hover {
-      background: rgba(255,255,255,0.3);
-      transform: rotate(90deg);
-    }
-    .orgchart-lightbox__hint {
-      position: absolute;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255,255,255,0.7);
-      font-size: 0.85rem;
-      letter-spacing: .3px;
-    }
-
-    @media (max-width: 768px) {
-      .orgchart-wrap { padding: 16px; }
-      .orgchart-zoom-hint { top: 12px; right: 12px; font-size: 0.7rem; padding: 6px 10px; }
-      .orgchart-lightbox { padding: 12px; }
-      .orgchart-lightbox__close { width: 40px; height: 40px; top: 14px; right: 14px; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/portal.css?v=12" />
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-links">
-        <span class="th"><i class="fa-solid fa-graduation-cap"></i> ราชวิทยาลัยจุฬาภรณ์ | คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</span>
-        <span class="en"><i class="fa-solid fa-graduation-cap"></i> Chulabhorn Royal Academy | Faculty of Health Science Technology</span>
-        <a href="mailto:smohst2026@gmail.com"><i class="fa-solid fa-envelope"></i> smohst2026@gmail.com</a>
-      </div>
-      <div class="lang-toggle">
-        <button data-lang-btn="th" class="active">TH</button>
-        <button data-lang-btn="en">EN</button>
-      </div>
+  <div class="ribbon">
+    <div class="ribbon-inner">
+      <span>
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span class="th">ราชวิทยาลัยจุฬาภรณ์ | คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</span>
+        <span class="en">Chulabhorn Royal Academy | Faculty of HST</span>
+      </span>
+      <span style="display:flex; gap:14px; align-items:center;">
+        <span class="ribbon-lang">
+          <button data-lang-btn="th" class="active">TH</button>
+          <button data-lang-btn="en">EN</button>
+        </span>
+      </span>
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="logo">
-        <img src="assets/logo-smo-transparent.png" alt="SMO Logo" class="logo-mark" />
-        <span class="logo-text">
-          <strong class="th">สโมสรนักศึกษา HST</strong>
-          <strong class="en">HST Student Association</strong>
-          <small class="th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small>
-          <small class="en">Faculty of Health Science Technology</small>
+  <header class="portal-header">
+    <div class="portal-nav">
+      <a href="index.html" class="brand">
+        <img src="../assets/logo-smo-transparent.png" alt="SMO HST" />
+        <span class="brand-text">
+          <strong>SMO HST <span style="color:var(--green);">Space</span></strong>
+          <small class="th">สโมสรนักศึกษา คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small>
+          <small class="en">Student Association, Faculty of HST</small>
         </span>
       </a>
-      <nav class="main-nav" id="mainNav">
-        <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html"><span class="th">หน้าหลัก</span><span class="en">Home</span></a>
+        <a href="index.html#announcements"><span class="th">ประกาศ</span><span class="en">Announcements</span></a>
+        <a href="contact.html"><span class="th">แจ้งปัญหา</span><span class="en">Report</span></a>
+        <a href="tools.html"><span class="th">บริการนักศึกษา</span><span class="en">Services</span></a>
+        <a href="activities.html"><span class="th">ปฏิทินกิจกรรม</span><span class="en">Activities</span></a>
+        <a href="index.html#departments"><span class="th">ฝ่าย</span><span class="en">Departments</span></a>
         <a href="about.html" class="active"><span class="th">เกี่ยวกับเรา</span><span class="en">About</span></a>
-        <a href="https://hst.cra.ac.th/" target="_blank" rel="noopener"><span class="th">ข่าวประชาสัมพันธ์</span><span class="en">News</span></a>
-        <a href="activities.html"><span class="th">กิจกรรม</span><span class="en">Activities</span></a>
-        <a href="services.html"><span class="th">บริการนักศึกษา</span><span class="en">Services</span></a>
-        <a href="contact.html"><span class="th">ส่งข้อความ/ร้องเรียน</span><span class="en">Contact / Report</span></a>
       </nav>
-      <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
 
-  <!-- BANNER -->
-  <section class="page-banner">
-    <div class="container">
-      <h1 class="th">เกี่ยวกับสโมสรนักศึกษา</h1>
-      <h1 class="en">About the Student Association</h1>
-      <div class="breadcrumb">
-        <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
-        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;opacity:.7"></i>
-        <span class="th">เกี่ยวกับเรา</span><span class="en">About</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== LOGO SHOWCASE ===== -->
-  <section class="logo-showcase">
-    <img src="assets/faculty-logo-transparent.png" alt="ตราคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์" class="faculty-logo" />
-    <div class="logo-caption">
-      <strong class="th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</strong>
-      <strong class="en">Faculty of Health Science Technology</strong>
-      <span class="th">ราชวิทยาลัยจุฬาภรณ์</span>
-      <span class="en">Chulabhorn Royal Academy</span>
-    </div>
-    <div class="divider"></div>
-    <img src="assets/logo-smo-transparent.png" alt="ตราสโมสรนักศึกษา HST" class="smo-logo" />
-    <div class="logo-caption">
-      <strong class="th">สโมสรนักศึกษา</strong>
-      <strong class="en">Student Association</strong>
-    </div>
-  </section>
-
-  <!-- ===== OFFICIAL DOCUMENTS ===== -->
-  <section class="section" style="padding-bottom: 0;">
-    <div class="container">
-      <div class="text-center mb-3">
-        <h2 class="section-title th" style="display:inline-block;">เอกสารทางการ</h2>
-        <h2 class="section-title en" style="display:inline-block;">Official Documents</h2>
-      </div>
-      <p class="section-subtitle text-center th" style="max-width:680px;margin:22px auto 8px;">ประกาศและเอกสารทางการที่เกี่ยวข้องกับสโมสรนักศึกษา</p>
-      <p class="section-subtitle text-center en" style="max-width:680px;margin:22px auto 8px;">Official announcements and documents related to the Student Association</p>
-
-      <a href="assets/docs/announcement-hst-64.pdf" target="_blank" rel="noopener" class="doc-card" style="text-decoration:none;color:inherit;">
-        <div class="doc-icon"><i class="fa-solid fa-file-lines"></i></div>
-        <div class="doc-info">
-          <h4 class="th">ประกาศคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</h4>
-          <h4 class="en">Faculty of Health Science Technology Announcement</h4>
-          <p class="th">ประกาศอย่างเป็นทางการของคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ลงนามโดยผู้บริหารคณะ</p>
-          <p class="en">Official announcement signed by faculty leadership</p>
-          <div class="doc-meta">
-            <span><i class="fa-regular fa-file-pdf"></i> PDF</span>
-            <span><i class="fa-solid fa-file"></i> ~1.7 MB</span>
-            <span class="th"><i class="fa-solid fa-calendar"></i> ปี 2564</span>
-            <span class="en"><i class="fa-solid fa-calendar"></i> Year 2021</span>
-          </div>
-        </div>
-        <div class="doc-actions">
-          <span class="doc-btn primary"><i class="fa-solid fa-eye"></i> <span class="th">เปิดดู</span><span class="en">View</span></span>
-          <span class="doc-btn outline" onclick="event.preventDefault(); event.stopPropagation(); const a = document.createElement('a'); a.href='assets/docs/announcement-hst-64.pdf'; a.download='ประกาศคณะเทคโน-64.pdf'; a.click();"><i class="fa-solid fa-download"></i> <span class="th">ดาวน์โหลด</span><span class="en">Download</span></span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- VISION / MISSION -->
+  <!-- HERO INTRO -->
   <section class="section">
     <div class="container">
-      <div class="about-text" style="max-width: 820px; margin: 0 auto;">
-          <h2 class="th">วิสัยทัศน์ของสโมสร</h2>
-          <h2 class="en">Our Vision</h2>
-          <p class="th">"สโมสรนักศึกษาที่เข้มแข็ง เป็นเสียงของนักศึกษา HST ส่งเสริมศักยภาพรอบด้าน และสร้างพื้นที่ปลอดภัยสำหรับการเรียนรู้และเติบโตร่วมกัน"</p>
-          <p class="en">"A strong student Association that voices HST students' needs, promotes well-rounded development, and creates a safe space for learning and growing together."</p>
-          <h2 class="th mt-3">พันธกิจ</h2>
-          <h2 class="en mt-3">Mission</h2>
-          <ul class="th" style="padding-left:20px; list-style: disc;">
-            <li>เป็นตัวแทนนักศึกษาในการประสานงานกับคณะและสถาบัน</li>
-            <li>จัดกิจกรรมพัฒนาศักยภาพทางวิชาการ ศิลปะวัฒนธรรมไทย และสุขภาพ</li>
-            <li>สนับสนุนสวัสดิการและคุณภาพชีวิตนักศึกษา</li>
-            <li>ส่งเสริมความสัมพันธ์ระหว่างอาจารย์ นักศึกษา รุ่นพี่ รุ่นน้อง และศิษย์เก่า</li>
-            <li>ดำเนินกิจกรรมบำเพ็ญประโยชน์ต่อชุมชนและสังคม</li>
-          </ul>
-          <ul class="en" style="padding-left:20px; list-style: disc;">
-            <li>Represent students in coordinating with the faculty and institute</li>
-            <li>Run activities that grow academic, ethical, and health competencies</li>
-            <li>Support student welfare and quality of life</li>
-            <li>Strengthen ties among students, seniors, juniors, and alumni</li>
-            <li>Engage in community service</li>
-          </ul>
-        </div>
-    </div>
-  </section>
-
-  <!-- DEPARTMENTS -->
-  <section class="section" style="background: var(--color-yellow-soft);">
-    <div class="container">
-      <div class="text-center mb-3">
-        <h2 class="section-title th" style="display:inline-block;">โครงสร้างสโมสร</h2>
-        <h2 class="section-title en" style="display:inline-block;">Association Structure</h2>
-      </div>
-      <p class="section-subtitle text-center th" style="max-width:640px;margin:22px auto 36px;">สโมสรนักศึกษาประกอบด้วย 6 ฝ่ายหลัก ที่ทำงานร่วมกันเพื่อนักศึกษาทุกคน</p>
-      <p class="section-subtitle text-center en" style="max-width:640px;margin:22px auto 36px;">The Association has six departments working together for all students</p>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-chess-king"></i></div>
-          <h3 class="th">ฝ่ายบริหาร</h3>
-          <h3 class="en">Executive</h3>
-          <p class="th">นายก รองนายก เลขานุการ เหรัญญิก</p>
-          <p class="en">President, VP, Secretary, Treasurer</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-book-open"></i></div>
-          <h3 class="th">ฝ่ายวิชาการ</h3>
-          <h3 class="en">Academic</h3>
-          <p class="th">โครงการอบรม วิชาการ แนะนำหลักสูตร</p>
-          <p class="en">Workshops, tutoring</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
-          <h3 class="th">ฝ่ายกิจกรรม</h3>
-          <h3 class="en">Activities</h3>
-          <p class="th">งานรับน้อง สันทนาการ ศิลปะวัฒนธรรมไทย</p>
-          <p class="en">Orientation &amp; events</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
-          <h3 class="th">ฝ่ายประชาสัมพันธ์</h3>
-          <h3 class="en">PR &amp; Media</h3>
-          <p class="th">สื่อสารและสร้างคอนเทนต์ และประสานงาน</p>
-          <p class="en">Communications &amp; content</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-medal"></i></div>
-          <h3 class="th">ฝ่ายกีฬา</h3>
-          <h3 class="en">Sports</h3>
-          <p class="th">กิจกรรมกีฬา กิจกรรมสุขภาพนักสึกษา</p>
-          <p class="en">Sports &amp; wellness</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-handshake-angle"></i></div>
-          <h3 class="th">ฝ่ายบำเพ็ญประโยชน์</h3>
-          <h3 class="en">Volunteer</h3>
-          <p class="th">บริการสังคมและจิตอาสา</p>
-          <p class="en">Community service</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ORG CHART -->
-  <section class="section orgchart-section">
-    <div class="container">
-      <div class="text-center mb-3">
-        <h2 class="section-title th" style="display:inline-block;">แผนผังสโมสรนักศึกษาคณะ</h2>
-        <h2 class="section-title en" style="display:inline-block;">Organization Chart</h2>
-      </div>
-      <p class="section-subtitle text-center th" style="max-width:720px;margin:22px auto 36px;">
-        โครงสร้างการบริหารและการแบ่งฝ่ายของสโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ
+      <span class="section-eyebrow">About Us</span>
+      <h1 class="section-heading th">เกี่ยวกับสโมสรนักศึกษา HST</h1>
+      <h1 class="section-heading en">About HST Student Association</h1>
+      <p class="section-sub th" style="max-width:820px;">
+        สโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์ เป็นองค์กรที่ดำเนินการโดยนักศึกษาเพื่อนักศึกษา
+        มุ่งพัฒนาคุณภาพชีวิต ส่งเสริมศักยภาพทางวิชาการ กิจกรรม และการบำเพ็ญประโยชน์ต่อสังคม ภายใต้ฝ่ายกิจการนักศึกษา
       </p>
-      <p class="section-subtitle text-center en" style="max-width:720px;margin:22px auto 36px;">
-        Management structure and departmental organization of the HST Student Association
+      <p class="section-sub en" style="max-width:820px;">
+        HST Student Association is a student-led organization under the Student Affairs Division of the Faculty of Health Science Technology,
+        Chulabhorn Royal Academy. We are dedicated to enhancing student life, fostering academic excellence, promoting activities, and serving the community.
       </p>
-
-      <div class="orgchart-wrap" id="orgChartWrap" tabindex="0" role="button" aria-label="ขยายแผนผังสโมสร">
-        <img
-          src="assets/org-chart.png?v=1779083000"
-          alt="แผนผังสโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ"
-          class="orgchart-img"
-          loading="lazy"
-        />
-        <span class="orgchart-zoom-hint">
-          <i class="fa-solid fa-magnifying-glass-plus"></i>
-          <span class="th">คลิกเพื่อขยาย</span>
-          <span class="en">Click to zoom</span>
-        </span>
-      </div>
     </div>
   </section>
 
-  <!-- Lightbox for org chart -->
-  <div class="orgchart-lightbox" id="orgChartLightbox" aria-hidden="true" role="dialog">
-    <button class="orgchart-lightbox__close" id="orgChartClose" aria-label="ปิด">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-    <img src="assets/org-chart.png?v=1779083000" alt="แผนผังสโมสรนักศึกษาคณะ (มุมมองขยาย)" />
-    <span class="orgchart-lightbox__hint">
-      <span class="th">คลิกที่ภาพหรือพื้นที่ว่างเพื่อปิด · กด ESC</span>
-      <span class="en">Click image or backdrop to close · Press ESC</span>
-    </span>
-  </div>
-
-  <!-- COMMITTEE -->
-  <section class="section">
+  <!-- TEAM PREVIEW -->
+  <section class="section" style="background: var(--bg-alt);">
     <div class="container">
-      <div class="text-center mb-3">
-        <h2 class="section-title th" style="display:inline-block;">คณะกรรมการสโมสรนักศึกษาคณะ ปี 2569</h2>
-        <h2 class="section-title en" style="display:inline-block;">Student Association Committee 2026</h2>
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Our Team</span>
+          <h2 class="section-heading th">ทีมงาน</h2>
+          <h2 class="section-heading en">Team</h2>
+          <p class="section-sub th">คณะกรรมการนักศึกษา 20 ตำแหน่ง และที่ปรึกษาสโมสร ทำงานร่วมกันเพื่อนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</p>
+          <p class="section-sub en">20-position student committee and advisors working together for all HST students</p>
+        </div>
+        <a href="#orgchart" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-sitemap"></i>
+          <span class="th">ดูแผนผังองค์กร</span><span class="en">Org Chart</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
-      <p class="section-subtitle text-center th" style="max-width:720px;margin:22px auto 36px;">ที่ปรึกษา 2 ท่าน และคณะกรรมการนักศึกษาทั้ง 20 ตำแหน่ง ที่ร่วมกันขับเคลื่อนสโมสรเพื่อนักศึกษา HST ทุกคน</p>
-      <p class="section-subtitle text-center en" style="max-width:720px;margin:22px auto 36px;">2 advisors and 20 student committee members driving the Association for all HST students</p>
 
       <!-- ============ TIER 0: ADVISORS ============ -->
       <div class="committee-section">
-        <h3 class="tier-title"><span class="num"><i class="fa-solid fa-star"></i></span><span class="th">ที่ปรึกษาสโมสรนักศึกษา</span><span class="en">Student Association Advisors</span></h3>
-        <div class="team-grid-tier3">
-          <div class="team-card is-advisor">
-            <div class="team-photo">
-              <img src="assets/team/00-advisor-faculty.jpg" alt="อาจารย์ที่ปรึกษา" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">ดร.อธิวัฒน์ สายทอง</strong>
-              <strong class="en">Dr.ATHIWAT SAITONG</strong>
-              <span class="th">อาจารย์ที่ปรึกษาสโมสรนักศึกษา<br>รักษาการผู้ช่วยคณบดีด้านกิจการนักศึกษา </span>
-              <span class="en">Faculty Advisor</span>
-              <span class="en">Acting Associate Dean for Student Affairs</span>
-              <small class="th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small>
-              <small class="en">Faculty of Health Science Technology</small>
+        <h3 class="tier-title">
+          <span class="num icon-num"><i class="fa-solid fa-star"></i></span>
+          <span class="th">ที่ปรึกษาสโมสรนักศึกษา</span>
+          <span class="en">Student Association Advisors</span>
+        </h3>
+        <div class="team-grid-2">
+          <div class="member-card is-advisor">
+            <div class="member-avatar"><img src="../assets/team/00-advisor-faculty.jpg" alt="อาจารย์ที่ปรึกษา" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">อาจารย์ที่ปรึกษาสโมสรนักศึกษา</div>
+              <div class="member-role en">Faculty Advisor</div>
+              <div class="member-name th">ดร.อธิวัฒน์ สายทอง</div>
+              <div class="member-name en">Dr. ATHIWAT SAITONG</div>
+              <div class="member-program th">รักษาการผู้ช่วยคณบดีด้านกิจการนักศึกษา</div>
+              <div class="member-program en">Acting Associate Dean for Student Affairs</div>
             </div>
           </div>
-          <div class="team-card is-advisor">
-            <div class="team-photo">
-              <img src="assets/team/00-advisor-staff.jpg" alt="เจ้าหน้าที่กิจการนักศึกษา" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวจิราณี ชัยสมิต</strong>
-              <strong class="en">JIRANEE CHAISAMITH</strong>
-              <span class="th">เจ้าหน้าที่กิจการนักศึกษา</span>
-              <span class="en">Student Affairs Officer</span>
-              <small class="th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small>
-              <small class="en">Faculty of Health Science Technology</small>
+          <div class="member-card is-advisor">
+            <div class="member-avatar"><img src="../assets/team/00-advisor-staff.jpg" alt="เจ้าหน้าที่กิจการนักศึกษา" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">เจ้าหน้าที่กิจการนักศึกษา</div>
+              <div class="member-role en">Student Affairs Officer</div>
+              <div class="member-name th">นางสาวจิราณี ชัยสมิต</div>
+              <div class="member-name en">JIRANEE CHAISAMITH</div>
+              <div class="member-program th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</div>
+              <div class="member-program en">Faculty of Health Science Technology</div>
             </div>
           </div>
         </div>
@@ -449,20 +119,21 @@
 
       <!-- ============ TIER 1: PRESIDENT ============ -->
       <div class="committee-section">
-        <h3 class="tier-title"><span class="num">1</span><span class="th">นายกสโมสรนักศึกษา</span><span class="en">President</span></h3>
-        <div class="team-grid-tier1">
-          <div class="team-card is-president">
-            <div class="team-photo">
-              <!-- ใส่รูปได้ที่นี่: <img src="assets/team/01-president.jpg" alt="นายกสโมสร" /> -->
-              <img src="assets/team/01-president.jpg" alt="นายกสโมสร" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นายกานท์กวิน พันธัง</strong>
-              <strong class="en">KANKAWIN PHANTHANG</strong>
-              <span class="th">นายกสโมสรนักศึกษา HST</span>
-              <span class="en">President — HST Student Association</span>
-              <small class="th">สาขารังสีเทคนิค ชั้นปี 3</small>
-              <small class="en">Program RT Year 3rd </small>
+        <h3 class="tier-title">
+          <span class="num">1</span>
+          <span class="th">นายกสโมสรนักศึกษา</span>
+          <span class="en">President</span>
+        </h3>
+        <div class="team-grid-single">
+          <div class="member-card is-president">
+            <div class="member-avatar"><img src="../assets/team/01-president.jpg" alt="นายกสโมสร" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">นายกสโมสรนักศึกษา HST</div>
+              <div class="member-role en">President — HST Student Association</div>
+              <div class="member-name th">นายกานท์กวิน พันธัง</div>
+              <div class="member-name en">KANKAWIN PHANTHANG</div>
+              <div class="member-program th">สาขารังสีเทคนิค ชั้นปี 3</div>
+              <div class="member-program en">Program RT, Year 3</div>
             </div>
           </div>
         </div>
@@ -470,48 +141,43 @@
 
       <!-- ============ TIER 2: VICE PRESIDENTS ============ -->
       <div class="committee-section">
-        <h3 class="tier-title"><span class="num">2</span><span class="th">อุปนายกสโมสรนักศึกษา</span><span class="en">Vice Presidents</span></h3>
-        <div class="team-grid-tier2">
-          <div class="team-card is-vp">
-            <div class="team-photo">
-              <!-- <img src="assets/team/02-vp1.jpg" alt="อุปนายก 1" /> -->
-              <img src="assets/team/02-vp1.jpg" alt="อุปนายก 1" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวสิรีลานนา กาวินีย์</strong>
-              <strong class="en">SIREELANNA KAWINEE</strong>
-              <span class="th">อุปนายก คนที่ 1</span>
-              <span class="en">1st Vice President</span>
-              <small class="th">สาขารังสีเทคนิค ชั้นปี 2</small>
-              <small class="en">Program RT Year 2nd</small>
-            </div>
-          </div>
-          <div class="team-card is-vp">
-            <div class="team-photo">
-              <!-- <img src="assets/team/03-vp2.jpg" alt="อุปนายก 2" /> -->
-              <img src="assets/team/03-vp2.jpg" alt="อุปนายก 2" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวพิมพ์ทอง ใจยะเสน</strong>
-              <strong class="en">PIMTONG JAIYASEN</strong>
-              <span class="th">อุปนายก คนที่ 2</span>
-              <span class="en">2nd Vice President</span>
-              <small class="th">สาขาฉุกเฉินการแพทย์ ชั้นปี 3</small>
-              <small class="en">Program PMD Year 3rd</small>
+        <h3 class="tier-title">
+          <span class="num">2</span>
+          <span class="th">อุปนายกสโมสรนักศึกษา</span>
+          <span class="en">Vice Presidents</span>
+        </h3>
+        <div class="team-grid-3">
+          <div class="member-card is-vp">
+            <div class="member-avatar"><img src="../assets/team/02-vp1.jpg" alt="อุปนายก 1" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">อุปนายก คนที่ 1</div>
+              <div class="member-role en">1st Vice President</div>
+              <div class="member-name th">นางสาวสิรีลานนา กาวินีย์</div>
+              <div class="member-name en">SIREELANNA KAWINEE</div>
+              <div class="member-program th">สาขารังสีเทคนิค ชั้นปี 2</div>
+              <div class="member-program en">Program RT, Year 2</div>
             </div>
           </div>
-          <div class="team-card is-vp">
-            <div class="team-photo">
-              <!-- <img src="assets/team/04-vp3.jpg" alt="อุปนายก 3" /> -->
-              <img src="assets/team/04-vp3.jpg" alt="อุปนายก 3" loading="lazy" />
+          <div class="member-card is-vp">
+            <div class="member-avatar"><img src="../assets/team/03-vp2.jpg" alt="อุปนายก 2" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">อุปนายก คนที่ 2</div>
+              <div class="member-role en">2nd Vice President</div>
+              <div class="member-name th">นางสาวพิมพ์ทอง ใจยะเสน</div>
+              <div class="member-name en">PIMTONG JAIYASEN</div>
+              <div class="member-program th">สาขาฉุกเฉินการแพทย์ ชั้นปี 3</div>
+              <div class="member-program en">Program PMD, Year 3</div>
             </div>
-            <div class="team-info">
-              <strong class="th">นางสาวกัณฐิกา บุตรน้อย</strong>
-              <strong class="en">KUNTIKA BOODNOI</strong>
-              <span class="th">อุปนายก คนที่ 3</span>
-              <span class="en">3rd Vice President</span>
-              <small class="th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 3</small>
-              <small class="en">Program HKH Year 3rd</small>
+          </div>
+          <div class="member-card is-vp">
+            <div class="member-avatar"><img src="../assets/team/04-vp3.jpg" alt="อุปนายก 3" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">อุปนายก คนที่ 3</div>
+              <div class="member-role en">3rd Vice President</div>
+              <div class="member-name th">นางสาวกัณฐิกา บุตรน้อย</div>
+              <div class="member-name en">KUNTIKA BOODNOI</div>
+              <div class="member-program th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 3</div>
+              <div class="member-program en">Program HKH, Year 3</div>
             </div>
           </div>
         </div>
@@ -519,34 +185,32 @@
 
       <!-- ============ TIER 3: SECRETARY + TREASURER ============ -->
       <div class="committee-section">
-        <h3 class="tier-title"><span class="num">3</span><span class="th">เลขานุการและการเงิน</span><span class="en">Secretary &amp; Treasurer</span></h3>
-        <div class="team-grid-tier3">
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/05-secretary.jpg" alt="เลขานุการ" /> -->
-              <img src="assets/team/05-secretary.jpg" alt="เลขานุการ" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวประภาสิริ สงฆ์รักษา</strong>
-              <strong class="en">PRAPHASIRI SONGRAKSA</strong>
-              <span class="th">เลขานุการ</span>
-              <span class="en">Secretary</span>
-              <small class="th">สาขารังสีเทคนิค ชั้นปี 2</small>
-              <small class="en">Program RT Year 2nd</small>
+        <h3 class="tier-title">
+          <span class="num">3</span>
+          <span class="th">เลขานุการและการเงิน</span>
+          <span class="en">Secretary &amp; Treasurer</span>
+        </h3>
+        <div class="team-grid-2">
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/05-secretary.jpg" alt="เลขานุการ" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">เลขานุการ</div>
+              <div class="member-role en">Secretary</div>
+              <div class="member-name th">นางสาวประภาสิริ สงฆ์รักษา</div>
+              <div class="member-name en">PRAPHASIRI SONGRAKSA</div>
+              <div class="member-program th">สาขารังสีเทคนิค ชั้นปี 2</div>
+              <div class="member-program en">Program RT, Year 2</div>
             </div>
           </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/06-treasurer.jpg" alt="เหรัญญิก" /> -->
-              <img src="assets/team/06-treasurer.jpg" alt="เหรัญญิก" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวปาลิตา อ่อนตา</strong>
-              <strong class="en">PALITA ORNTA</strong>
-              <span class="th">เหรัญญิกและจัดหารายได้</span>
-              <span class="en">Treasurer &amp; Fundraising</span>
-              <small class="th">สาขารังสีเทคนิค ชั้นปี 2</small>
-              <small class="en">Program RT Year 2nd</small>
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/06-treasurer.jpg" alt="เหรัญญิก" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">เหรัญญิกและจัดหารายได้</div>
+              <div class="member-role en">Treasurer &amp; Fundraising</div>
+              <div class="member-name th">นางสาวปาลิตา อ่อนตา</div>
+              <div class="member-name en">PALITA ORNTA</div>
+              <div class="member-program th">สาขารังสีเทคนิค ชั้นปี 2</div>
+              <div class="member-program en">Program RT, Year 2</div>
             </div>
           </div>
         </div>
@@ -554,90 +218,76 @@
 
       <!-- ============ TIER 4: DEPARTMENT COMMITTEES ============ -->
       <div class="committee-section">
-        <h3 class="tier-title"><span class="num">4</span><span class="th">กรรมการฝ่ายงาน</span><span class="en">Department Committees</span></h3>
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/07-academic.jpg" alt="ฝ่ายวิชาการ" /> -->
-              <img src="assets/team/07-academic.jpg" alt="ฝ่ายวิชาการ" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นายพิชัยยุทธ จิณะไชย</strong>
-              <strong class="en">PICHAIYUT JINACHAI</strong>
-              <span class="th">กรรมการฝ่ายวิชาการ</span>
-              <span class="en">Academic Affairs</span>
-              <small class="th">สาขารังสีเทคนิค ชั้นปี 3</small>
-              <small class="en">Program RT Year 3rd</small>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/08-pr.jpg" alt="ฝ่ายประชาสัมพันธ์" /> -->
-              <img src="assets/team/08-pr.jpg" alt="ฝ่ายประชาสัมพันธ์" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวนูรมุซิลลา หลีเส็น</strong>
-              <strong class="en">NURMUZILLA LEESEN</strong>
-              <span class="th">กรรมการฝ่ายประชาสัมพันธ์</span>
-              <span class="en">Public Relations</span>
-              <small class="th">สาขาฉุกเฉินการแพทย์ ชั้นปี 2</small>
-              <small class="en">Program PMD Year 2nd</small>
+        <h3 class="tier-title">
+          <span class="num">4</span>
+          <span class="th">กรรมการฝ่ายงาน</span>
+          <span class="en">Department Committees</span>
+        </h3>
+        <div class="team-grid-4">
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/07-academic.jpg" alt="ฝ่ายวิชาการ" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">กรรมการฝ่ายวิชาการ</div>
+              <div class="member-role en">Academic Affairs</div>
+              <div class="member-name th">นายพิชัยยุทธ จิณะไชย</div>
+              <div class="member-name en">PICHAIYUT JINACHAI</div>
+              <div class="member-program th">สาขารังสีเทคนิค ชั้นปี 3</div>
+              <div class="member-program en">Program RT, Year 3</div>
             </div>
           </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/09-welfare.jpg" alt="ฝ่ายสวัสดิการ" /> -->
-              <img src="assets/team/09-welfare.jpg" alt="ฝ่ายสวัสดิการ" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวสรชา วาทิตเมธี</strong>
-              <strong class="en">SORACHA VATIDMATEE</strong>
-              <span class="th">กรรมการฝ่ายสวัสดิการ</span>
-              <span class="en">Student Welfare</span>
-              <small class="th">สาขารังสีเทคนิค ชั้นปี 2 </small>
-              <small class="en">Program RT Year 2nd</small>
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/08-pr.jpg" alt="ฝ่ายประชาสัมพันธ์" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">กรรมการฝ่ายประชาสัมพันธ์</div>
+              <div class="member-role en">Public Relations</div>
+              <div class="member-name th">นางสาวนูรมุซิลลา หลีเส็น</div>
+              <div class="member-name en">NURMUZILLA LEESEN</div>
+              <div class="member-program th">สาขาฉุกเฉินการแพทย์ ชั้นปี 2</div>
+              <div class="member-program en">Program PMD, Year 2</div>
             </div>
           </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/10-venue.jpg" alt="ฝ่ายสถานที่และยานพาหนะ" /> -->
-              <img src="assets/team/10-venue.jpg" alt="ฝ่ายสถานที่และยานพาหนะ" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นายอัครพนธ์ บูรณวนิช</strong>
-              <strong class="en">AAGKARAPON BURANAWANIT</strong>
-              <span class="th">กรรมการฝ่ายสถานที่และยานพาหนะ</span>
-              <span class="en">Venue &amp; Transport</span>
-              <small class="th">สาขารังสีเทคนิค ชั้นปี 3</small>
-              <small class="en">Program RT Year 3rd</small>
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/09-welfare.jpg" alt="ฝ่ายสวัสดิการ" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">กรรมการฝ่ายสวัสดิการ</div>
+              <div class="member-role en">Student Welfare</div>
+              <div class="member-name th">นางสาวสรชา วาทิตเมธี</div>
+              <div class="member-name en">SORACHA VATIDMATEE</div>
+              <div class="member-program th">สาขารังสีเทคนิค ชั้นปี 2</div>
+              <div class="member-program en">Program RT, Year 2</div>
             </div>
           </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/11-sports.jpg" alt="ฝ่ายกีฬาและนันทนาการ" /> -->
-              <img src="assets/team/11-sports.jpg" alt="ฝ่ายกีฬาและนันทนาการ" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาววิชชุมนตร์ จิราพิทยวัฒน์</strong>
-              <strong class="en">VITCHUMONT JIRAPITTAYAWAT</strong>
-              <span class="th">กรรมการฝ่ายกีฬาและนันทนาการ</span>
-              <span class="en">Sports &amp; Recreation</span>
-              <small class="th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 2</small>
-              <small class="en">Program HKH Year 2nd</small>
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/10-venue.jpg" alt="ฝ่ายสถานที่และยานพาหนะ" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">กรรมการฝ่ายสถานที่และยานพาหนะ</div>
+              <div class="member-role en">Venue &amp; Transport</div>
+              <div class="member-name th">นายอัครพนธ์ บูรณวนิช</div>
+              <div class="member-name en">AAGKARAPON BURANAWANIT</div>
+              <div class="member-program th">สาขารังสีเทคนิค ชั้นปี 3</div>
+              <div class="member-program en">Program RT, Year 3</div>
             </div>
           </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/12-volunteer.jpg" alt="ฝ่ายบำเพ็ญประโยชน์" /> -->
-              <img src="assets/team/12-volunteer.jpg" alt="ฝ่ายบำเพ็ญประโยชน์" loading="lazy" />
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/11-sports.jpg" alt="ฝ่ายกีฬาและนันทนาการ" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">กรรมการฝ่ายกีฬาและนันทนาการ</div>
+              <div class="member-role en">Sports &amp; Recreation</div>
+              <div class="member-name th">นางสาววิชชุมนตร์ จิราพิทยวัฒน์</div>
+              <div class="member-name en">VITCHUMONT JIRAPITTAYAWAT</div>
+              <div class="member-program th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 2</div>
+              <div class="member-program en">Program HKH, Year 2</div>
             </div>
-            <div class="team-info">
-              <strong class="th">นางสาวจันทิรา ธรรมคุณ</strong>
-              <strong class="en">JANTIRA THAMMAKUN</strong>
-              <span class="th">กรรมการบำเพ็ญประโยชน์ และศิลปวัฒนธรรม</span>
-              <span class="en">Volunteer &amp; Culture</span>
-              <small class="th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 2</small>
-              <small class="en">Program HKH Year 2nd</small>
+          </div>
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/12-volunteer.jpg" alt="ฝ่ายบำเพ็ญประโยชน์" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">กรรมการบำเพ็ญประโยชน์และศิลปวัฒนธรรม</div>
+              <div class="member-role en">Volunteer &amp; Culture</div>
+              <div class="member-name th">นางสาวจันทิรา ธรรมคุณ</div>
+              <div class="member-name en">JANTIRA THAMMAKUN</div>
+              <div class="member-program th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 2</div>
+              <div class="member-program en">Program HKH, Year 2</div>
             </div>
           </div>
         </div>
@@ -645,62 +295,54 @@
 
       <!-- ============ TIER 5: GENERAL COMMITTEES ============ -->
       <div class="committee-section">
-        <h3 class="tier-title"><span class="num">5</span><span class="th">กรรมการทั่วไป</span><span class="en">General Committees</span></h3>
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/13-general1.jpg" alt="กรรมการทั่วไป" /> -->
-              <img src="assets/team/13-general1.jpg" alt="กรรมการทั่วไป" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวอภินทร์พร ศรีโมรา</strong>
-              <strong class="en">APHINTHAPORN SRIMORA</strong>
-              <span class="th">กรรมการทั่วไป</span>
-              <span class="en">General Committee</span>
-              <small class="th">สาขาฉุกเฉินการแพทย์ชั้นปี 3</small>
-              <small class="en">Program PMD Year 3rd</small>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/14-general2.jpg" alt="กรรมการทั่วไป" /> -->
-              <img src="assets/team/14-general2.jpg" alt="กรรมการทั่วไป" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวภัณฑิรา สินประเสริฐ</strong>
-              <strong class="en">PHANTHIRA SINPRASERT</strong>
-              <span class="th">กรรมการทั่วไป</span>
-              <span class="en">General Committee</span>
-              <small class="th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 2</small>
-              <small class="en">Program HKH Year 2nd</small>
+        <h3 class="tier-title">
+          <span class="num">5</span>
+          <span class="th">กรรมการทั่วไป</span>
+          <span class="en">General Committees</span>
+        </h3>
+        <div class="team-grid-4">
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/13-general1.jpg" alt="กรรมการทั่วไป" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">กรรมการทั่วไป</div>
+              <div class="member-role en">General Committee</div>
+              <div class="member-name th">นางสาวอภินทร์พร ศรีโมรา</div>
+              <div class="member-name en">APHINTHAPORN SRIMORA</div>
+              <div class="member-program th">สาขาฉุกเฉินการแพทย์ ชั้นปี 3</div>
+              <div class="member-program en">Program PMD, Year 3</div>
             </div>
           </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/15-general3.jpg" alt="กรรมการทั่วไป" /> -->
-              <img src="assets/team/15-general3.jpg" alt="กรรมการทั่วไป" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวกานต์ชนก พุธเพ่ง</strong>
-              <strong class="en">KANCHANOK PUTPENG</strong>
-              <span class="th">กรรมการทั่วไป</span>
-              <span class="en">General Committee</span>
-              <small class="th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 2</small>
-              <small class="en">Program HKH Year 2nd</small>
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/14-general2.jpg" alt="กรรมการทั่วไป" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">กรรมการทั่วไป</div>
+              <div class="member-role en">General Committee</div>
+              <div class="member-name th">นางสาวภัณฑิรา สินประเสริฐ</div>
+              <div class="member-name en">PHANTHIRA SINPRASERT</div>
+              <div class="member-program th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 2</div>
+              <div class="member-program en">Program HKH, Year 2</div>
             </div>
           </div>
-          <div class="team-card">
-            <div class="team-photo">
-              <!-- <img src="assets/team/16-general4.jpg" alt="กรรมการทั่วไป" /> -->
-              <img src="assets/team/16-general4.jpg" alt="กรรมการทั่วไป" loading="lazy" />
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/15-general3.jpg" alt="กรรมการทั่วไป" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">กรรมการทั่วไป</div>
+              <div class="member-role en">General Committee</div>
+              <div class="member-name th">นางสาวกานต์ชนก พุธเพ่ง</div>
+              <div class="member-name en">KANCHANOK PUTPENG</div>
+              <div class="member-program th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 2</div>
+              <div class="member-program en">Program HKH, Year 2</div>
             </div>
-            <div class="team-info">
-              <strong class="th">นางสาวภัชราภา สุขวงษ์</strong>
-              <strong class="en">PATCHARAPA SUKWONG</strong>
-              <span class="th">กรรมการทั่วไป</span>
-              <span class="en">General Committee</span>
-              <small class="th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 2</small>
-              <small class="en">Program HKH Year 2nd</small>
+          </div>
+          <div class="member-card">
+            <div class="member-avatar"><img src="../assets/team/16-general4.jpg" alt="กรรมการทั่วไป" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">กรรมการทั่วไป</div>
+              <div class="member-role en">General Committee</div>
+              <div class="member-name th">นางสาวภัชราภา สุขวงษ์</div>
+              <div class="member-name en">PATCHARAPA SUKWONG</div>
+              <div class="member-program th">สาขาวิทยาศาสตร์การเคลื่อนไหวและสุขภาพ ชั้นปี 2</div>
+              <div class="member-program en">Program HKH, Year 2</div>
             </div>
           </div>
         </div>
@@ -708,209 +350,216 @@
 
       <!-- ============ TIER 6: YEAR REPRESENTATIVES ============ -->
       <div class="committee-section">
-        <h3 class="tier-title"><span class="num">6</span><span class="th">ผู้แทนนักศึกษาแต่ละชั้นปี</span><span class="en">Year Representatives</span></h3>
-        <div class="team-grid">
-          <div class="team-card is-rep">
-            <div class="team-photo">
-              <!-- <img src="assets/team/17-rep-y1.jpg" alt="ผู้แทนปี 1" /> -->
-              <img src="assets/team/17-rep-y1.jpg" alt="ผู้แทนปี 1" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">รอการแต่งตั้ง</strong>
-              <strong class="en">Name Surname</strong>
-              <span class="th">ผู้แทนนักศึกษาชั้นปี 1</span>
-              <span class="en">1st Year Representative</span>
-              <small class="th">สาขา</small>
-              <small class="en">Program</small>
-            </div>
-          </div>
-          <div class="team-card is-rep">
-            <div class="team-photo">
-              <!-- <img src="assets/team/18-rep-y2.jpg" alt="ผู้แทนปี 2" /> -->
-              <img src="assets/team/18-rep-y2.jpg" alt="ผู้แทนปี 2" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาวกชพรรณ เล็กคง</strong>
-              <strong class="en">KOTCHAPHAN LEKKHONG</strong>
-              <span class="th">ผู้แทนนักศึกษาชั้นปี 2</span>
-              <span class="en">2nd Year Representative</span>
-              <small class="th">สาขาฉุกเฉินการแพทย์</small>
-              <small class="en">Program PMD</small>
+        <h3 class="tier-title">
+          <span class="num">6</span>
+          <span class="th">ผู้แทนนักศึกษาแต่ละชั้นปี</span>
+          <span class="en">Year Representatives</span>
+        </h3>
+        <div class="team-grid-4">
+          <div class="member-card is-rep">
+            <div class="member-avatar"><img src="../assets/team/17-rep-y1.jpg" alt="ผู้แทนปี 1" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">ผู้แทนนักศึกษาชั้นปี 1</div>
+              <div class="member-role en">1st Year Representative</div>
+              <div class="member-name th">รอการแต่งตั้ง</div>
+              <div class="member-name en">To be appointed</div>
+              <div class="member-program th">—</div>
+              <div class="member-program en">—</div>
             </div>
           </div>
-          <div class="team-card is-rep">
-            <div class="team-photo">
-              <!-- <img src="assets/team/19-rep-y3.jpg" alt="ผู้แทนปี 3" /> -->
-              <img src="assets/team/19-rep-y3.jpg" alt="ผู้แทนปี 3" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <strong class="th">นางสาววารีวา วทัญญูไพศาล</strong>
-              <strong class="en">WAREEWA WATHANYOOPHAISAN</strong>
-              <span class="th">ผู้แทนนักศึกษาชั้นปี 3</span>
-              <span class="en">3rd Year Representative</span>
-              <small class="th">สาขารังสีเทคนิค</small>
-              <small class="en">Program RT</small>
+          <div class="member-card is-rep">
+            <div class="member-avatar"><img src="../assets/team/18-rep-y2.jpg" alt="ผู้แทนปี 2" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">ผู้แทนนักศึกษาชั้นปี 2</div>
+              <div class="member-role en">2nd Year Representative</div>
+              <div class="member-name th">นางสาวกชพรรณ เล็กคง</div>
+              <div class="member-name en">KOTCHAPHAN LEKKHONG</div>
+              <div class="member-program th">สาขาฉุกเฉินการแพทย์</div>
+              <div class="member-program en">Program PMD</div>
             </div>
           </div>
-          <div class="team-card is-rep">
-            <div class="team-photo">
-              <!-- <img src="assets/team/20-rep-y4.jpg" alt="ผู้แทนปี 4" /> -->
-              <img src="assets/team/20-rep-y4.jpg" alt="ผู้แทนปี 4" loading="lazy" />
+          <div class="member-card is-rep">
+            <div class="member-avatar"><img src="../assets/team/19-rep-y3.jpg" alt="ผู้แทนปี 3" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">ผู้แทนนักศึกษาชั้นปี 3</div>
+              <div class="member-role en">3rd Year Representative</div>
+              <div class="member-name th">นางสาววารีวา วทัญญูไพศาล</div>
+              <div class="member-name en">WAREEWA WATHANYOOPHAISAN</div>
+              <div class="member-program th">สาขารังสีเทคนิค</div>
+              <div class="member-program en">Program RT</div>
             </div>
-            <div class="team-info">
-              <strong class="th">นางสาวปนัดดา สาระผล</strong>
-              <strong class="en">PANUTDA SARAPOL</strong>
-              <span class="th">ผู้แทนนักศึกษาชั้นปี 4</span>
-              <span class="en">4th Year Representative</span>
-              <small class="th">สาขารังสีเทคนิค</small>
-              <small class="en">Program RT</small>
+          </div>
+          <div class="member-card is-rep">
+            <div class="member-avatar"><img src="../assets/team/20-rep-y4.jpg" alt="ผู้แทนปี 4" loading="lazy" /></div>
+            <div class="member-info">
+              <div class="member-role th">ผู้แทนนักศึกษาชั้นปี 4</div>
+              <div class="member-role en">4th Year Representative</div>
+              <div class="member-name th">นางสาวปนัดดา สาระผล</div>
+              <div class="member-name en">PANUTDA SARAPOL</div>
+              <div class="member-program th">สาขารังสีเทคนิค</div>
+              <div class="member-program en">Program RT</div>
             </div>
           </div>
         </div>
       </div>
-
-      <p class="text-center mt-3 th" style="color:var(--color-text-light);font-size:0.9rem;margin-top:40px;">คณะกรรมการสโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์ ปีการศึกษา 2569</code></p>
-      <p class="text-center mt-3 en" style="color:var(--color-text-light);font-size:0.9rem;margin-top:40px;">Board of Directors, HST Student Association, Chulalongkorn University, Academic Year 2026</code></p>
     </div>
   </section>
 
-  <!-- HISTORY TIMELINE -->
-  <section class="section" style="background: var(--color-yellow-soft);">
+  <!-- VISION -->
+  <section class="section">
     <div class="container">
-      <div class="text-center mb-3">
-        <h2 class="section-title th" style="display:inline-block;">ประวัติสโมสร</h2>
-        <h2 class="section-title en" style="display:inline-block;">Our History</h2>
-      </div>
-      <div style="max-width:760px;margin:36px auto 0;display:flex;flex-direction:column;gap:18px;">
-        <div class="activity-card">
-          <div class="activity-date" style="background: linear-gradient(135deg, #ffd166, #52b788); color:#1d3557;"><strong>2562</strong><span>ก่อตั้ง</span></div>
-          <div class="activity-info">
-            <h3 class="th">การก่อตั้งสโมสร</h3>
-            <h3 class="en">Foundation</h3>
-            <p class="th">สโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพได้รับการก่อตั้งอย่างเป็นทางการ พร้อมกับการเปิดคณะ</p>
-            <p class="en">The HST Student Association was officially established alongside the faculty.</p>
-          </div>
-        </div>
-        <div class="activity-card">
-          <div class="activity-date"><strong>2564</strong><span>เติบโต</span></div>
-          <div class="activity-info">
-            <h3 class="th">ขยายสาขาวิชา</h3>
-            <h3 class="en">Expansion</h3>
-            <p class="th">เพิ่มสาขาวิชาและกิจกรรมที่ครอบคลุม พร้อมเริ่มจัดงานวิชาการระดับคณะ</p>
-            <p class="en">Programs expanded and the first faculty-level academic events launched.</p>
-          </div>
-        </div>
-        <div class="activity-card">
-          <div class="activity-date"><strong>2569</strong><span>ปัจจุบัน</span></div>
-          <div class="activity-info">
-            <h3 class="th">ก้าวสู่ดิจิทัล</h3>
-            <h3 class="en">Digital Era</h3>
-            <p class="th">เปิดเว็บไซต์อย่างเป็นทางการของสโมสร เพื่อเป็นศูนย์รวมข่าวสารและบริการนักศึกษา</p>
-            <p class="en">Official website launches as the central hub for student news and services.</p>
-          </div>
-        </div>
+      <span class="section-eyebrow">Our Vision</span>
+      <h2 class="section-heading th">วิสัยทัศน์</h2>
+      <h2 class="section-heading en">Vision</h2>
+
+      <div class="vision-quote mt-2">
+        <blockquote class="th">
+          "เป็นสโมสรนักศึกษาที่เข้าใจ ใกล้ชิด และเป็นสะพานเชื่อมระหว่างนักศึกษาและคณะ<br />
+          พร้อมส่งเสริมศักยภาพและคุณภาพชีวิตของนักศึกษาทุกคน"
+        </blockquote>
+        <blockquote class="en">
+          "To be a student association that understands, connects, and bridges<br />
+          students and the faculty — empowering every student's potential and well-being."
+        </blockquote>
+        <cite class="th">— สโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์</cite>
+        <cite class="en">— SMO HST, Chulabhorn Royal Academy</cite>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" style="text-align:center;">
+  <!-- MISSION (3C) -->
+  <section class="section" style="background: var(--bg-alt);">
     <div class="container">
-      <h2 class="section-title th" style="display:inline-block;">ช่องทางการติดต่อข่าวสาร</h2>
-      <h2 class="section-title en" style="display:inline-block;">Stay Connected</h2>
-      <p class="section-subtitle th" style="max-width:600px;margin:22px auto 28px;">รับข่าวสารและอัปเดตจากสโมสรได้ที่นี่</p>
-      <p class="section-subtitle en" style="max-width:600px;margin:22px auto 28px;">Stay updated with the latest news and events from our association</p>
-      <a href="contact.html" class="btn btn-solid"><i class="fa-solid fa-paper-plane"></i> <span class="th">ติดต่อเรา</span><span class="en">Contact Us</span></a>
+      <span class="section-eyebrow">Our Mission</span>
+      <h2 class="section-heading th">พันธกิจ</h2>
+      <h2 class="section-heading en">Mission</h2>
+      <p class="section-sub th">สิ่งที่เราตั้งใจทำให้สำเร็จ ผ่านหลัก 3C</p>
+      <p class="section-sub en">What we set out to accomplish through our 3C principle</p>
+
+      <div class="numbered mt-2">
+        <div class="num-item">
+          <div class="num-lg">01</div>
+          <h4>Care</h4>
+          <h3 class="th">ใส่ใจ</h3><h3 class="en">Care</h3>
+          <p class="th">ใส่ใจในทุกเสียงของนักศึกษา รับฟังปัญหา และดูแลสวัสดิการอย่างจริงจัง</p>
+          <p class="en">Care for every student voice — listen, support, and act on needs.</p>
+        </div>
+        <div class="num-item">
+          <div class="num-lg">02</div>
+          <h4>Connect</h4>
+          <h3 class="th">เชื่อมโยง</h3><h3 class="en">Connect</h3>
+          <p class="th">เป็นสะพานเชื่อมระหว่างนักศึกษา คณะ และสถาบัน — สื่อสารข้อมูลอย่างชัดเจนและรวดเร็ว</p>
+          <p class="en">Bridge students, faculty, and institution with clear communication.</p>
+        </div>
+        <div class="num-item">
+          <div class="num-lg">03</div>
+          <h4>Cultivate</h4>
+          <h3 class="th">เสริมสร้าง</h3><h3 class="en">Cultivate</h3>
+          <p class="th">เสริมสร้างศักยภาพนักศึกษาทั้งด้านวิชาการ กิจกรรม และจิตอาสา ให้เติบโตอย่างสมดุล</p>
+          <p class="en">Cultivate students across academics, activities, and volunteerism.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
+  <!-- POLICY -->
+  <section class="section">
+    <div class="container">
+      <span class="section-eyebrow">Our Policy</span>
+      <h2 class="section-heading th">นโยบาย</h2>
+      <h2 class="section-heading en">Policy</h2>
+      <p class="section-sub th">แนวทางการทำงาน แบ่งตามด้านสำคัญ 3 ด้าน</p>
+      <p class="section-sub en">Our working approach across 3 key areas</p>
+
+      <div class="numbered mt-2">
+        <div class="num-item">
+          <h4>Organization</h4>
+          <h3 class="th">เชิงบริหารองค์กร</h3>
+          <h3 class="en">Organization</h3>
+          <p class="th">
+            • สร้างพื้นที่กลาง one-stop-service รวมทุกอย่างที่นักศึกษาต้องใช้<br />
+            • ผลักดันการทำงานให้เป็นดิจิทัลและติดตามได้<br />
+            • สื่อสารประชาสัมพันธ์ที่มีเอกลักษณ์ ชัดเจน และเป็นเอกภาพ
+          </p>
+          <p class="en">
+            • Build a one-stop-service hub for all student needs<br />
+            • Digitize operations, make them trackable<br />
+            • Consistent, clear, unified brand communication
+          </p>
+        </div>
+        <div class="num-item">
+          <h4>Activities</h4>
+          <h3 class="th">เชิงสร้างสรรค์กิจกรรม</h3>
+          <h3 class="en">Activities</h3>
+          <p class="th">
+            • เปิดโอกาสให้นักศึกษาทุกคนเสนอโครงการอย่างเท่าเทียม<br />
+            • เรียนรู้จากประสบการณ์จริง สรุปข้อบกพร่องเพื่อพัฒนา<br />
+            • สโมสรมีส่วนร่วมให้คำแนะนำอย่างใกล้ชิด
+          </p>
+          <p class="en">
+            • Equal opportunity to propose projects<br />
+            • Learn from real experience, reflect on improvements<br />
+            • Close mentorship from SMO on every project
+          </p>
+        </div>
+        <div class="num-item">
+          <h4>Student Life</h4>
+          <h3 class="th">เชิงคุณภาพชีวิตนักศึกษา</h3>
+          <h3 class="en">Student Life</h3>
+          <p class="th">
+            • รวบรวมข้อมูลการเรียน จัดหาสื่อการเรียนรู้เพิ่ม<br />
+            • ส่งเสริมพัฒนาด้าน non-medical ตามความสนใจ<br />
+            • สร้างสิ่งแวดล้อมสโมสรและหอพักให้น่าอยู่ ปลอดภัย
+          </p>
+          <p class="en">
+            • Compile learning materials, provide extra resources<br />
+            • Support non-academic skill development<br />
+            • Create safe, welcoming SMO &amp; dorm environments
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="portal-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-logos">
-            <img src="assets/faculty-logo.png" alt="ตราคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ" class="footer-faculty-logo" />
-            <img src="assets/logo-smo-transparent.png" alt="โลโก้ SMO" class="footer-smo-logo" />
+          <div class="brand" style="color:#fff;">
+            <img src="../assets/logo-smo-transparent.png" alt="SMO HST" style="background:#fff; border-radius:8px; padding:4px;" />
+            <span class="brand-text"><strong>SMO HST Space</strong><small class="th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small><small class="en">Faculty of HST</small></span>
           </div>
-          <div class="logo">
-            <span class="logo-text">
-              <strong>สโมสรนักศึกษา HST</strong>
-              <small>Faculty of Health Science Technology</small>
-            </span>
-          </div>
-          <p class="th">สโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ<br>ราชวิทยาลัยจุฬาภรณ์</p>
+          <p class="th">สโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์</p>
           <p class="en">HST Student Association, Chulabhorn Royal Academy</p>
-          <div class="footer-social">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-line"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-          </div>
         </div>
         <div class="footer-col">
-          <h4 class="th">เมนูหลัก</h4>
-          <h4 class="en">Main Menu</h4>
+          <h4 class="th">เมนู</h4><h4 class="en">Menu</h4>
           <ul>
-            <li><a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a></li>
+            <li><a href="index.html"><span class="th">หน้าหลัก</span><span class="en">Home</span></a></li>
+            <li><a href="tools.html"><span class="th">บริการนักศึกษา</span><span class="en">Services</span></a></li>
+            <li><a href="activities.html"><span class="th">ปฏิทิน</span><span class="en">Calendar</span></a></li>
+            <li><a href="academic.html"><span class="th">ปฏิทินการศึกษา</span><span class="en">Academic Calendar</span></a></li>
+            <li><a href="contact.html"><span class="th">แจ้งปัญหา</span><span class="en">Report</span></a></li>
             <li><a href="about.html"><span class="th">เกี่ยวกับเรา</span><span class="en">About</span></a></li>
-            <li><a href="https://hst.cra.ac.th/" target="_blank" rel="noopener"><span class="th">ข่าวประชาสัมพันธ์</span><span class="en">News</span></a></li>
-            <li><a href="activities.html"><span class="th">กิจกรรม</span><span class="en">Activities</span></a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 class="th">บริการ</h4>
-          <h4 class="en">Services</h4>
+          <h4 class="th">ทางลัด</h4><h4 class="en">Quick Links</h4>
           <ul>
-            <li><a href="services.html#registration"><span class="th">ระบบลงทะเบียน</span><span class="en">Registration</span></a></li>
-            <li><a href="services.html#elearning">งานทะเบียนนักศึกษา PCCMS</a></li>
-            <li><a href="services.html#library"><span class="th">ห้องสมุด</span><span class="en">Library</span></a></li>
+            <li><a href="https://hst.cra.ac.th" target="_blank" rel="noopener">เว็บคณะ HST</a></li>
+            <li><a href="https://www.cra.ac.th" target="_blank" rel="noopener">ราชวิทยาลัยจุฬาภรณ์</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 class="th">ติดต่อเรา</h4>
-          <h4 class="en">Contact</h4>
-          <ul>
-            <li><i class="fa-solid fa-location-dot"></i>
-              <span class="th"> 906 ถ.กำแพงเพชร 6 หลักสี่ กทม.</span>
-              <span class="en"> 906 Kamphaeng Phet 6, Bangkok</span>
-            </li>
-            <li><i class="fa-solid fa-phone"></i> <a href="tel:022576000">02-257-6000</a></li>
-            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:smohst2026@gmail.com">smohst2026@gmail.com</a></li>
-          </ul>
+          <h4 class="th">ติดต่อ</h4><h4 class="en">Contact</h4>
+          <ul><li><i class="fa-solid fa-envelope"></i> <a href="mailto:smohst2026@gmail.com">smohst2026@gmail.com</a></li></ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span class="th">© 2026 สโมสรนักศึกษา HST — สงวนลิขสิทธิ์</span>
-        <span class="en">© 2026 HST Student Association — All rights reserved</span>
-      </div>
+      <div class="footer-bottom"><span class="th">© 2026 SMO HST Space</span><span class="en">© 2026 SMO HST Space</span></div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=1779500000"></script>
-
-  <!-- Org Chart Lightbox -->
-  <script>
-    (function() {
-      const wrap = document.getElementById('orgChartWrap');
-      const lightbox = document.getElementById('orgChartLightbox');
-      const closeBtn = document.getElementById('orgChartClose');
-      if (!wrap || !lightbox) return;
-
-      function open() {
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-      function close() {
-        lightbox.classList.remove('open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-
-      wrap.addEventListener('click', open);
-      wrap.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
-      });
-      closeBtn.addEventListe
+  <script src="js/portal.js?v=12"></script>
+</body>
+</html>
