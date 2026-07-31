@@ -2,718 +2,108 @@
 <html lang="th" data-lang="th">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="assets/logo-smo-transparent.png" /><link rel="apple-touch-icon" href="assets/logo-smo-transparent.png" />
+  <link rel="icon" type="image/png" href="../assets/logo-smo-transparent.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>กิจกรรมและปฏิทิน | สโมสรนักศึกษา HST</title>
-  <meta name="description" content="ปฏิทินกิจกรรม โครงการ และอีเวนต์ตลอดปีการศึกษาของสโมสรนักศึกษา คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์ — ปฐมนิเทศ ค่ายรับน้อง กีฬาสุขภาพสัมพันธ์ และโครงการบำเพ็ญประโยชน์" />
-  <meta name="keywords" content="ปฏิทินกิจกรรม, กิจกรรมสโมสร, ปฐมนิเทศ, รับน้อง, HST, ราชวิทยาลัยจุฬาภรณ์, ค่ายนักศึกษา, โครงการนักศึกษา" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://smohst69.netlify.app/activities" />
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="สโมสรนักศึกษา HST" />
-  <meta property="og:locale" content="th_TH" />
-  <meta property="og:url" content="https://smohst69.netlify.app/activities" />
-  <meta property="og:title" content="กิจกรรมและปฏิทินกิจกรรม — สโมสรนักศึกษา HST" />
-  <meta property="og:description" content="ปฏิทินกิจกรรมและโครงการตลอดปีของสโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ" />
-  <meta property="og:image" content="https://smohst69.netlify.app/assets/about-building.jpg" />
-  <meta property="og:image:alt" content="อาคารคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์" />
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ปฏิทินกิจกรรม — สโมสรนักศึกษา HST" />
-  <meta name="twitter:description" content="กิจกรรมและโครงการตลอดปีการศึกษา คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ" />
-  <meta name="twitter:image" content="https://smohst69.netlify.app/assets/about-building.jpg" />
+  <title>ปฏิทินกิจกรรม | SMO HST Space</title>
+  <meta name="description" content="ปฏิทินกิจกรรมและโครงการของสโมสรนักศึกษา คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css?v=1779500000" />
+  <link rel="stylesheet" href="css/portal.css?v=12" />
   <style>
-    /* ===================================================
-       Calendar v2 — modern, color-categorized, modal + sidebar
-       =================================================== */
-
-    /* --- Layout: main + sidebar --- */
-    .cal-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 320px;
-      gap: 28px;
-      align-items: start;
-    }
-    @media (max-width: 1024px) {
-      .cal-layout { grid-template-columns: 1fr; }
-    }
-
-    /* --- Category filter chip bar --- */
-    .cat-filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
-      padding: 14px;
-      background: var(--color-white);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-    }
-    .cat-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 13px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      font-family: inherit;
-      background: #f3f4f6;
-      color: #4b5563;
-      border: 1.5px solid transparent;
-      cursor: pointer;
-      transition: all .18s ease;
-      white-space: nowrap;
-    }
-    .cat-chip:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .cat-chip .cat-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--cat-color, #9ca3af);
-      flex-shrink: 0;
-    }
-    .cat-chip.active {
-      background: var(--cat-color, var(--color-primary));
-      color: #fff;
-      border-color: var(--cat-color, var(--color-primary));
-    }
-    .cat-chip.active .cat-dot { background: rgba(255,255,255,0.85); }
-    .cat-chip[data-cat="all"] { background: var(--color-primary); color: #fff; }
-    .cat-chip[data-cat="all"].active { background: var(--color-primary); }
-    .cat-chip[data-cat="all"]:not(.active) { background: #f3f4f6; color: #4b5563; }
-
-    /* --- Calendar card --- */
-    .calendar-wrap {
-      background: var(--color-white);
-      padding: 24px;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-    }
-    .cal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-      gap: 12px;
-    }
-    .cal-header h3 {
-      color: var(--color-primary);
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      margin: 0;
-    }
-    .cal-header-controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .cal-nav-btn {
-      width: 38px; height: 38px;
-      border-radius: 50%;
-      background: var(--color-yellow-soft);
-      color: var(--color-primary);
-      border: none;
-      cursor: pointer;
-      display: grid; place-items: center;
-      transition: all .2s;
-    }
-    .cal-nav-btn:hover {
-      background: var(--color-secondary);
-      color: var(--color-white);
-      transform: scale(1.05);
-    }
-    .cal-today-btn {
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: var(--color-primary);
-      color: #fff;
-      font-size: 0.82rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all .2s;
-      font-family: inherit;
-    }
-    .cal-today-btn:hover {
-      background: var(--color-secondary);
-      transform: translateY(-1px);
-    }
-
-    /* --- Calendar grid --- */
-    .cal-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 6px;
-    }
-    .cal-day-name {
-      text-align: center;
-      font-weight: 700;
-      color: var(--color-secondary);
-      padding: 8px 0;
-      font-size: 0.82rem;
-      letter-spacing: .5px;
-    }
-    .cal-cell {
-      min-height: 120px;
-      background: #fafbf9;
-      border: 1.5px solid transparent;
-      border-radius: 10px;
-      padding: 8px;
-      color: var(--color-text);
-      position: relative;
-      transition: all .18s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      overflow: hidden;
-    }
-    .cal-cell .day-num {
-      font-size: 0.92rem;
-      font-weight: 600;
-      line-height: 1;
-      color: #6b7280;
-    }
-    .cal-cell:hover:not(.muted) {
-      border-color: var(--color-secondary);
-      background: var(--color-white);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(45,106,79,0.12);
-    }
-    .cal-cell.muted { opacity: 0.35; }
-    .cal-cell.muted .day-num { color: #d1d5db; }
-
-    /* Day with events */
-    .cal-cell.has-event {
-      background: var(--color-white);
-      border-color: #e5e7eb;
-    }
-    .cal-cell.has-event .day-num {
-      color: var(--color-primary);
-      font-weight: 700;
-    }
-
-    /* Today */
+    /* ===== GREEN & WHITE ONLY: บังคับให้ทุกหมวดกิจกรรมใช้เฉดเขียว =====
+       calendar.js กำหนดสี --cat-color/--cat-bg ต่อกิจกรรมแบบ inline
+       !important ทำให้ override สีเดิม (น้ำเงิน/ส้ม/ม่วง ฯลฯ) เป็นเขียวทั้งหมด */
+    .cat-chip, .event-chip, .legend-swatch, .upcoming-date, .cat-dot,
+    .event-modal__hero, .event-modal__row .row-icon, .upcoming-countdown,
     .cal-cell.today {
-      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-      border-color: var(--color-primary);
-      box-shadow: 0 4px 14px rgba(45,106,79,0.25);
+      --cat-color: var(--green) !important;
+      --cat-bg: var(--yellow-soft) !important;
     }
-    .cal-cell.today .day-num {
-      color: #fff;
-      font-weight: 800;
-      font-size: 1rem;
-    }
-    .cal-cell.today .event-chip {
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(4px);
-    }
+    /* Calendar-specific styles (reuse from v1 with portal color vars) */
+    .cal-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 28px; align-items: start; }
+    @media (max-width: 1024px) { .cal-layout { grid-template-columns: 1fr; } }
+    .cat-filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; padding: 14px; background: var(--surface); border-radius: var(--r-md); box-shadow: var(--sh-sm); border: 1px solid var(--border); }
+    .cat-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 13px; border-radius: 999px; font-size: 0.82rem; font-weight: 600; font-family: inherit; background: var(--bg-alt); color: var(--text-2); border: 1.5px solid transparent; cursor: pointer; transition: all .18s; white-space: nowrap; }
+    .cat-chip:hover { transform: translateY(-1px); box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    .cat-chip .cat-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cat-color, #9ca3af); flex-shrink: 0; }
+    .cat-chip.active { background: var(--cat-color, var(--navy)); color: #fff; border-color: var(--cat-color, var(--navy)); }
+    .cat-chip.active .cat-dot { background: rgba(255,255,255,0.85); }
+    .cat-chip[data-cat="all"] { background: var(--navy); color: #fff; }
+    .cat-chip[data-cat="all"].active { background: var(--navy); }
+    .cat-chip[data-cat="all"]:not(.active) { background: var(--bg-alt); color: var(--text-2); }
 
-    /* Event chip inside cell */
-    .event-chip {
-      font-size: 0.68rem;
-      font-weight: 600;
-      line-height: 1.3;
-      padding: 4px 6px 4px 8px;
-      border-radius: 5px;
-      cursor: pointer;
-      background: var(--cat-bg, #f3f4f6);
-      color: var(--cat-color, var(--color-primary));
-      border-left: 3px solid var(--cat-color, var(--color-secondary));
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      transition: all .15s ease;
-      position: relative;
-    }
-    .event-chip:hover {
-      transform: translateX(2px);
-      filter: brightness(0.94);
-    }
+    .calendar-wrap { background: var(--surface); padding: 24px; border-radius: var(--r-md); box-shadow: var(--sh-sm); border: 1px solid var(--border); }
+    .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; gap: 12px; }
+    .cal-header h3 { color: var(--navy); font-family: var(--font-display); font-size: 1.35rem; margin: 0; }
+    .cal-header-controls { display: flex; align-items: center; gap: 8px; }
+    .cal-nav-btn { width: 38px; height: 38px; border-radius: 50%; background: var(--yellow-soft); color: var(--navy); border: none; cursor: pointer; display: grid; place-items: center; transition: all .2s; }
+    .cal-nav-btn:hover { background: var(--green); color: #fff; transform: scale(1.05); }
+    .cal-today-btn { padding: 7px 14px; border-radius: 999px; background: var(--navy); color: #fff; font-size: 0.82rem; font-weight: 600; border: none; cursor: pointer; transition: all .2s; font-family: inherit; }
+    .cal-today-btn:hover { background: var(--green); }
+
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+    .cal-day-name { text-align: center; font-weight: 700; color: var(--green); padding: 8px 0; font-size: 0.82rem; letter-spacing: .5px; }
+    .cal-cell { min-height: 120px; background: var(--bg); border: 1.5px solid transparent; border-radius: 10px; padding: 8px; color: var(--text); position: relative; transition: all .18s; display: flex; flex-direction: column; gap: 4px; overflow: hidden; }
+    .cal-cell .day-num { font-size: 0.92rem; font-weight: 600; line-height: 1; color: var(--text-2); }
+    .cal-cell:hover:not(.muted) { border-color: var(--green); background: var(--surface); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(45,106,79,0.12); }
+    .cal-cell.muted { opacity: 0.35; }
+    .cal-cell.muted .day-num { color: var(--text-3); }
+    .cal-cell.has-event { background: var(--surface); border-color: var(--border); }
+    .cal-cell.has-event .day-num { color: var(--navy); font-weight: 700; }
+    .cal-cell.today { background: linear-gradient(135deg, var(--navy), var(--green)); border-color: var(--navy); box-shadow: 0 4px 14px rgba(45,106,79,0.25); }
+    .cal-cell.today .day-num { color: #fff; font-weight: 800; font-size: 1rem; }
+    .cal-cell.today .event-chip { background: rgba(255,255,255,0.92); }
+    .event-chip { font-size: 0.68rem; font-weight: 600; line-height: 1.3; padding: 4px 6px 4px 8px; border-radius: 5px; cursor: pointer; background: var(--cat-bg, var(--bg-alt)); color: var(--cat-color, var(--navy)); border-left: 3px solid var(--cat-color, var(--green)); display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; transition: all .15s; }
+    .event-chip:hover { transform: translateX(2px); filter: brightness(0.94); }
     .event-chip + .event-chip { margin-top: 3px; }
-
-    /* Hide event chips when filtered out */
     .cal-cell.filtered-out .event-chip { display: none; }
-    .cal-cell.filtered-out:not(.today) {
-      background: #fafbf9;
-      border-color: transparent;
-    }
+    .cal-cell.filtered-out:not(.today) { background: var(--bg); border-color: transparent; }
 
-    /* --- Sidebar: Upcoming events --- */
-    .cal-sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      position: sticky;
-      top: 100px;
-    }
-    @media (max-width: 1024px) {
-      .cal-sidebar { position: static; }
-    }
-    .sidebar-card {
-      background: var(--color-white);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-    }
-    .sidebar-card__header {
-      padding: 16px 18px;
-      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-      color: #fff;
-    }
-    .sidebar-card__header h4 {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .cal-sidebar { display: flex; flex-direction: column; gap: 18px; position: sticky; top: 90px; }
+    @media (max-width: 1024px) { .cal-sidebar { position: static; } }
+    .sidebar-card { background: var(--surface); border-radius: var(--r-md); box-shadow: var(--sh-sm); border: 1px solid var(--border); overflow: hidden; }
+    .sidebar-card__header { padding: 16px 18px; background: linear-gradient(135deg, var(--navy), var(--green)); color: #fff; }
+    .sidebar-card__header h4 { font-family: var(--font-display); font-size: 1.05rem; margin: 0; display: flex; align-items: center; gap: 8px; }
     .sidebar-card__body { padding: 8px; }
 
-    .upcoming-item {
-      display: flex;
-      gap: 12px;
-      padding: 11px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all .15s ease;
-      align-items: flex-start;
-    }
-    .upcoming-item:hover { background: var(--color-yellow-soft); }
-    .upcoming-item + .upcoming-item { border-top: 1px dashed #e5e7eb; }
-    .upcoming-date {
-      width: 50px;
-      flex-shrink: 0;
-      text-align: center;
-      background: var(--cat-bg, #f3f4f6);
-      color: var(--cat-color, var(--color-primary));
-      border-radius: 8px;
-      padding: 6px 4px;
-      line-height: 1.1;
-    }
-    .upcoming-date strong {
-      display: block;
-      font-size: 1.3rem;
-      font-weight: 800;
-    }
-    .upcoming-date span {
-      display: block;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      opacity: 0.85;
-    }
+    .upcoming-item { display: flex; gap: 12px; padding: 11px; border-radius: 8px; cursor: pointer; transition: all .15s; align-items: flex-start; }
+    .upcoming-item:hover { background: var(--yellow-soft); }
+    .upcoming-item + .upcoming-item { border-top: 1px dashed var(--border); }
+    .upcoming-date { width: 50px; flex-shrink: 0; text-align: center; background: var(--cat-bg, var(--bg-alt)); color: var(--cat-color, var(--navy)); border-radius: 8px; padding: 6px 4px; line-height: 1.1; }
+    .upcoming-date strong { display: block; font-size: 1.3rem; font-weight: 800; }
+    .upcoming-date span { display: block; font-size: 0.65rem; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; opacity: 0.85; }
     .upcoming-info { flex: 1; min-width: 0; }
-    .upcoming-info h5 {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      margin: 0 0 4px;
-      line-height: 1.35;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .upcoming-info .upcoming-meta {
-      font-size: 0.72rem;
-      color: #6b7280;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .upcoming-countdown {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #fff;
-      background: var(--cat-color, var(--color-secondary));
-      padding: 2px 8px;
-      border-radius: 999px;
-      display: inline-block;
-      margin-top: 4px;
-    }
+    .upcoming-info h5 { font-size: 0.85rem; font-weight: 600; color: var(--navy); margin: 0 0 4px; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .upcoming-info .upcoming-meta { font-size: 0.72rem; color: var(--text-2); display: flex; align-items: center; gap: 6px; }
+    .upcoming-countdown { font-size: 0.7rem; font-weight: 700; color: #fff; background: var(--cat-color, var(--green)); padding: 2px 8px; border-radius: 999px; display: inline-block; margin-top: 4px; }
 
-    /* Legend card */
     .legend-card { padding: 16px 18px; }
-    .legend-card h5 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      margin: 0 0 12px;
-      font-family: var(--font-display);
-    }
+    .legend-card h5 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin: 0 0 12px; font-family: var(--font-display); }
     .legend-list { display: flex; flex-direction: column; gap: 7px; }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      color: #4b5563;
-    }
-    .legend-swatch {
-      width: 14px; height: 14px;
-      border-radius: 4px;
-      background: var(--cat-color);
-      flex-shrink: 0;
-    }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--text-2); }
+    .legend-swatch { width: 14px; height: 14px; border-radius: 4px; background: var(--cat-color); flex-shrink: 0; }
 
-    /* --- Event detail modal --- */
-    .event-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: grid;
-      place-items: center;
-      padding: 20px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .25s ease;
-    }
-    .event-modal.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .event-modal__backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(12,59,46,0.55);
-      backdrop-filter: blur(4px);
-    }
-    .event-modal__panel {
-      position: relative;
-      max-width: 520px;
-      width: 100%;
-      max-height: 90vh;
-      overflow: auto;
-      background: var(--color-white);
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      transform: scale(0.92);
-      transition: transform .25s ease;
-    }
+    /* Event modal */
+    .event-modal { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity .25s; }
+    .event-modal.open { opacity: 1; pointer-events: auto; }
+    .event-modal__backdrop { position: absolute; inset: 0; background: rgba(12,59,46,0.55); backdrop-filter: blur(4px); }
+    .event-modal__panel { position: relative; max-width: 520px; width: 100%; max-height: 90vh; overflow: auto; background: var(--surface); border-radius: 16px; box-shadow: var(--sh-lg); transform: scale(0.92); transition: transform .25s; }
     .event-modal.open .event-modal__panel { transform: scale(1); }
-    .event-modal__hero {
-      padding: 28px 28px 18px;
-      background: linear-gradient(135deg, var(--cat-color, var(--color-primary)), var(--cat-color, var(--color-secondary)));
-      color: #fff;
-      position: relative;
-    }
-    .event-modal__hero .cat-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.22);
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .event-modal__hero h2 {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      margin: 0;
-      line-height: 1.4;
-    }
-    .event-modal__hero .date-big {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      margin-top: 14px;
-      font-size: 0.95rem;
-      opacity: 0.95;
-    }
-    .event-modal__hero .date-big strong {
-      font-size: 1.6rem;
-      font-weight: 800;
-    }
-    .event-modal__close {
-      position: absolute;
-      top: 12px; right: 12px;
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-size: 1.2rem;
-      display: grid; place-items: center;
-      transition: all .2s;
-    }
-    .event-modal__close:hover {
-      background: rgba(255,255,255,0.35);
-      transform: rotate(90deg);
-    }
+    .event-modal__hero { padding: 28px 28px 18px; background: linear-gradient(135deg, var(--cat-color, var(--navy)), var(--cat-color, var(--green))); color: #fff; position: relative; }
+    .event-modal__hero .cat-label { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.22); padding: 4px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; margin-bottom: 12px; }
+    .event-modal__hero h2 { font-family: var(--font-display); font-size: 1.35rem; margin: 0; line-height: 1.4; }
+    .event-modal__hero .date-big { display: flex; align-items: baseline; gap: 8px; margin-top: 14px; font-size: 0.95rem; opacity: 0.95; }
+    .event-modal__hero .date-big strong { font-size: 1.6rem; font-weight: 800; }
+    .event-modal__close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.2); color: #fff; border: none; cursor: pointer; font-size: 1.2rem; display: grid; place-items: center; transition: all .2s; }
+    .event-modal__close:hover { background: rgba(255,255,255,0.35); transform: rotate(90deg); }
     .event-modal__body { padding: 22px 28px 28px; }
-    .event-modal__row {
-      display: flex;
-      gap: 12px;
-      padding: 11px 0;
-      border-bottom: 1px solid #f3f4f6;
-      align-items: flex-start;
-    }
+    .event-modal__row { display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
     .event-modal__row:last-child { border-bottom: none; }
-    .event-modal__row .row-icon {
-      width: 36px; height: 36px;
-      border-radius: 10px;
-      background: var(--cat-bg, #f3f4f6);
-      color: var(--cat-color, var(--color-primary));
-      display: grid; place-items: center;
-      flex-shrink: 0;
-    }
-    .event-modal__row .row-content {
-      flex: 1;
-      font-size: 0.92rem;
-    }
-    .event-modal__row .row-content strong {
-      display: block;
-      font-size: 0.75rem;
-      color: #6b7280;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-      margin-bottom: 2px;
-    }
-    .event-modal__actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-    .event-modal__actions .btn {
-      flex: 1;
-      min-width: 140px;
-      justify-content: center;
-    }
+    .event-modal__row .row-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--cat-bg, var(--bg-alt)); color: var(--cat-color, var(--navy)); display: grid; place-items: center; flex-shrink: 0; }
+    .event-modal__row .row-content { flex: 1; font-size: 0.92rem; }
+    .event-modal__row .row-content strong { display: block; font-size: 0.75rem; color: var(--text-2); font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 2px; }
+    .event-modal__actions { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+    .event-modal__actions .btn { flex: 1; min-width: 140px; justify-content: center; }
 
-    /* --- Year-round activity list (auto from EVENTS) --- */
-    .year-filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      margin-bottom: 28px;
-    }
-    .year-chip {
-      padding: 7px 16px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      font-family: inherit;
-      background: var(--color-white);
-      color: var(--color-primary);
-      border: 1.5px solid var(--color-primary);
-      cursor: pointer;
-      transition: all .18s ease;
-    }
-    .year-chip:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(45,106,79,0.15); }
-    .year-chip.active {
-      background: var(--color-primary);
-      color: #fff;
-    }
-
-    .activity-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    @media (max-width: 1024px) { .activity-list { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px)  { .activity-list { grid-template-columns: 1fr; } }
-
-    .activity-card {
-      display: flex;
-      gap: 14px;
-      background: var(--color-white);
-      padding: 16px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border-left: 5px solid var(--cat-color, var(--color-primary));
-      cursor: pointer;
-      transition: all .2s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .activity-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
-    }
-    .activity-card::after {
-      content: "";
-      position: absolute;
-      top: 0; right: 0; bottom: 0;
-      width: 4px;
-      background: var(--cat-color, var(--color-secondary));
-      opacity: 0;
-      transition: opacity .2s ease;
-    }
-    .activity-card:hover::after { opacity: 0.7; }
-
-    .activity-date {
-      flex-shrink: 0;
-      width: 78px;
-      background: var(--cat-color, var(--color-primary));
-      color: #fff;
-      border-radius: 10px;
-      text-align: center;
-      padding: 12px 6px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 2px;
-    }
-    .activity-date strong {
-      font-size: 1.6rem;
-      font-weight: 800;
-      line-height: 1;
-      font-family: var(--font-display);
-    }
-    .activity-date span {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      opacity: 0.92;
-    }
-    .activity-date .year-tag {
-      font-size: 0.62rem;
-      opacity: 0.78;
-      margin-top: 2px;
-    }
-
-    .activity-info {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .activity-info h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1.4;
-      margin: 0;
-      font-family: var(--font-display);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .activity-cat-line {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--cat-color, var(--color-secondary));
-      background: var(--cat-bg, #f3f4f6);
-      padding: 3px 10px;
-      border-radius: 999px;
-      align-self: flex-start;
-      max-width: 100%;
-    }
-    .activity-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 14px;
-      font-size: 0.75rem;
-      color: #6b7280;
-      margin-top: auto;
-    }
-    .activity-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      max-width: 100%;
-    }
-    .activity-meta span i { color: var(--cat-color, var(--color-secondary)); }
-    .activity-meta-truncate {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 180px;
-    }
-
-    .activities-empty {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 40px 20px;
-      color: #9ca3af;
-      font-size: 0.95rem;
-    }
-
-    /* --- Pagination --- */
-    .pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-    .pagination button {
-      min-width: 38px;
-      height: 38px;
-      padding: 0 12px;
-      border-radius: 8px;
-      background: var(--color-white);
-      color: var(--color-primary);
-      border: 1.5px solid #e5e7eb;
-      font-family: inherit;
-      font-size: 0.92rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all .18s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .pagination button:hover:not(:disabled):not(.active) {
-      background: var(--color-yellow-soft);
-      border-color: var(--color-secondary);
-      transform: translateY(-1px);
-    }
-    .pagination button.active {
-      background: var(--color-primary);
-      color: #fff;
-      border-color: var(--color-primary);
-      box-shadow: 0 3px 10px rgba(45,106,79,0.25);
-    }
-    .pagination button:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-    .pagination .page-ellipsis {
-      padding: 0 6px;
-      color: #9ca3af;
-      font-weight: 600;
-    }
-    .pagination-info {
-      width: 100%;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #6b7280;
-      margin-top: 4px;
-      order: 99;
-    }
-    @media (max-width: 480px) {
-      .pagination button { min-width: 34px; height: 34px; font-size: 0.82rem; padding: 0 8px; }
-      .pagination button .page-label { display: none; }
-    }
-
-    /* --- Responsive --- */
     @media (max-width: 768px) {
       .cal-cell { min-height: 86px; padding: 5px; }
       .cal-cell .day-num { font-size: 0.78rem; }
@@ -727,16 +117,7 @@
     }
     @media (max-width: 480px) {
       .cal-cell { min-height: 64px; }
-      .cal-cell .event-chip {
-        display: block;
-        font-size: 0;
-        height: 4px;
-        padding: 0;
-        margin-top: 2px;
-        border-left: none;
-        border-radius: 2px;
-        background: var(--cat-color, var(--color-secondary));
-      }
+      .cal-cell .event-chip { display: block; font-size: 0; height: 4px; padding: 0; margin-top: 2px; border-left: none; border-radius: 2px; background: var(--cat-color, var(--green)); }
       .event-chip + .event-chip { margin-top: 2px; }
       .cal-today-btn { padding: 5px 10px; font-size: 0.72rem; }
     }
@@ -744,82 +125,63 @@
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-links">
-        <span class="th"><i class="fa-solid fa-graduation-cap"></i> ราชวิทยาลัยจุฬาภรณ์ | คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</span>
-        <span class="en"><i class="fa-solid fa-graduation-cap"></i> Chulabhorn Royal Academy | Faculty of Health Science Technology</span>
-        <a href="mailto:smohst2026@gmail.com"><i class="fa-solid fa-envelope"></i> smohst2026@gmail.com</a>
-      </div>
-      <div class="lang-toggle">
-        <button data-lang-btn="th" class="active">TH</button>
-        <button data-lang-btn="en">EN</button>
-      </div>
+  <div class="ribbon">
+    <div class="ribbon-inner">
+      <span>
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span class="th">ราชวิทยาลัยจุฬาภรณ์ | คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</span>
+        <span class="en">Chulabhorn Royal Academy | Faculty of HST</span>
+      </span>
+      <span style="display:flex; gap:14px; align-items:center;">
+        <span class="ribbon-lang">
+          <button data-lang-btn="th" class="active">TH</button>
+          <button data-lang-btn="en">EN</button>
+        </span>
+      </span>
     </div>
   </div>
 
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="logo">
-        <img src="assets/logo-smo-transparent.png" alt="SMO Logo" class="logo-mark" />
-        <span class="logo-text">
-          <strong class="th">สโมสรนักศึกษา HST</strong>
-          <strong class="en">HST Student Association</strong>
-          <small class="th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small>
-          <small class="en">Faculty of Health Science Technology</small>
+  <header class="portal-header">
+    <div class="portal-nav">
+      <a href="index.html" class="brand">
+        <img src="../assets/logo-smo-transparent.png" alt="SMO HST" />
+        <span class="brand-text">
+          <strong>SMO HST <span style="color:var(--green);">Space</span></strong>
+          <small class="th">สโมสรนักศึกษา คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small>
+          <small class="en">Student Association, Faculty of HST</small>
         </span>
       </a>
-      <nav class="main-nav" id="mainNav">
-        <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html"><span class="th">หน้าหลัก</span><span class="en">Home</span></a>
+        <a href="index.html#announcements"><span class="th">ประกาศ</span><span class="en">Announcements</span></a>
+        <a href="contact.html"><span class="th">แจ้งปัญหา</span><span class="en">Report</span></a>
+        <a href="tools.html"><span class="th">บริการนักศึกษา</span><span class="en">Services</span></a>
+        <a href="activities.html"><span class="th">ปฏิทินกิจกรรม</span><span class="en">Activities</span></a>
+        <a href="index.html#departments"><span class="th">ฝ่าย</span><span class="en">Departments</span></a>
         <a href="about.html"><span class="th">เกี่ยวกับเรา</span><span class="en">About</span></a>
-        <a href="https://hst.cra.ac.th/" target="_blank" rel="noopener"><span class="th">ข่าวประชาสัมพันธ์</span><span class="en">News</span></a>
-        <a href="activities.html" class="active"><span class="th">กิจกรรม</span><span class="en">Activities</span></a>
-        <a href="services.html"><span class="th">บริการนักศึกษา</span><span class="en">Services</span></a>
-        <a href="contact.html"><span class="th">ส่งข้อความ/ร้องเรียน</span><span class="en">Contact / Report</span></a>
       </nav>
-      <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
 
-  <section class="page-banner">
-    <div class="container">
-      <h1 class="th">กิจกรรมและปฏิทินกิจกรรม</h1>
-      <h1 class="en">Activities &amp; Calendar</h1>
-      <div class="breadcrumb">
-        <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
-        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;opacity:.7"></i>
-        <span class="th">กิจกรรม</span><span class="en">Activities</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CALENDAR -->
   <section class="section">
     <div class="container">
-      <div class="text-center mb-3">
-        <h2 class="section-title th" style="display:inline-block;">ปฏิทินกิจกรรม</h2>
-        <h2 class="section-title en" style="display:inline-block;">Activity Calendar</h2>
-      </div>
-      <p class="section-subtitle text-center th" style="max-width:640px;margin:22px auto 36px;">คลิกที่กิจกรรมในปฏิทินเพื่อดูรายละเอียด หรือกรองตามประเภทกิจกรรมที่สนใจ</p>
-      <p class="section-subtitle text-center en" style="max-width:640px;margin:22px auto 36px;">Click any event in the calendar to see details, or filter by category</p>
+      <span class="section-eyebrow">Calendar</span>
+      <h1 class="section-heading th">ปฏิทินกิจกรรม</h1>
+      <h1 class="section-heading en">Activity Calendar</h1>
+      <p class="section-sub th">คลิกกิจกรรมในปฏิทินเพื่อดูรายละเอียด กรองตามประเภทกิจกรรม หรือเลื่อนดูเดือนอื่นได้</p>
+      <p class="section-sub en">Click any event for details, filter by category, or navigate between months</p>
 
       <div class="cal-layout">
-
-        <!-- ==== Main column: filter + calendar ==== -->
         <div class="cal-main">
-
-          <!-- Category filter chips (rendered by JS) -->
           <div class="cat-filter-bar" id="catFilterBar"></div>
-
-          <!-- Calendar card -->
           <div class="calendar-wrap">
             <div class="cal-header">
               <h3 id="calLabel">พฤษภาคม 2569</h3>
               <div class="cal-header-controls">
                 <button class="cal-today-btn" id="todayBtn" title="กลับไปยังวันนี้">
                   <i class="fa-solid fa-location-crosshairs"></i>
-                  <span class="th">วันนี้</span>
-                  <span class="en">Today</span>
+                  <span class="th">วันนี้</span><span class="en">Today</span>
                 </button>
                 <button class="cal-nav-btn" id="prevMonth" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
                 <button class="cal-nav-btn" id="nextMonth" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
@@ -836,137 +198,74 @@
             </div>
             <div class="cal-grid" id="calGrid"></div>
           </div>
-
         </div>
 
-        <!-- ==== Sidebar: upcoming events + legend ==== -->
         <aside class="cal-sidebar">
-
           <div class="sidebar-card">
             <div class="sidebar-card__header">
-              <h4>
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <span class="th">กิจกรรมที่กำลังจะมาถึง</span>
-                <span class="en">Upcoming Events</span>
-              </h4>
+              <h4><i class="fa-solid fa-clock-rotate-left"></i> <span class="th">กิจกรรมที่กำลังจะมาถึง</span><span class="en">Upcoming Events</span></h4>
             </div>
-            <div class="sidebar-card__body" id="upcomingList">
-              <!-- rendered by JS -->
-            </div>
+            <div class="sidebar-card__body" id="upcomingList"></div>
           </div>
-
           <div class="sidebar-card legend-card">
-            <h5>
-              <span class="th">ประเภทกิจกรรม</span>
-              <span class="en">Event Categories</span>
-            </h5>
-            <div class="legend-list" id="legendList">
-              <!-- rendered by JS -->
-            </div>
+            <h5><span class="th">ประเภทกิจกรรม</span><span class="en">Event Categories</span></h5>
+            <div class="legend-list" id="legendList"></div>
           </div>
-
         </aside>
-
       </div>
     </div>
   </section>
 
-  <!-- ==== EVENT DETAIL MODAL ==== -->
+  <!-- Event Modal -->
   <div class="event-modal" id="eventModal" aria-hidden="true" role="dialog">
     <div class="event-modal__backdrop" data-close-modal></div>
     <div class="event-modal__panel" role="document">
-      <button class="event-modal__close" data-close-modal aria-label="Close">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+      <button class="event-modal__close" data-close-modal aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
       <div id="eventModalContent"></div>
     </div>
   </div>
 
-  <!-- ACTIVITIES LIST — auto-generated from calendar.js EVENTS -->
-  <section class="section" style="background: var(--color-yellow-soft);">
-    <div class="container">
-      <div class="text-center mb-3">
-        <h2 class="section-title th" style="display:inline-block;">โครงการและกิจกรรมตลอดปี</h2>
-        <h2 class="section-title en" style="display:inline-block;">Year-Round Activities</h2>
-      </div>
-      <p class="section-subtitle text-center th" style="max-width:680px;margin:22px auto 36px;">โครงการและกิจกรรมทั้งหมดที่สโมสรนักศึกษาจัดต่อเนื่องตลอดปีการศึกษา จัดเรียงตามวันที่ — คลิกเพื่อดูรายละเอียด</p>
-      <p class="section-subtitle text-center en" style="max-width:680px;margin:22px auto 36px;">All activities scheduled by the Student Association — sorted chronologically. Click any card for details.</p>
-
-      <!-- Year filter chips (rendered by JS) -->
-      <div class="year-filter-bar" id="yearFilterBar"></div>
-
-      <div class="activity-list" id="yearActivities">
-        <!-- rendered by calendar.js — uses EVENTS data + category colors -->
-      </div>
-
-      <!-- Pagination (rendered by JS) -->
-      <nav class="pagination" id="activityPagination" aria-label="Activity pages"></nav>
-    </div>
-  </section>
-
-  <footer class="site-footer">
+  <footer class="portal-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-                  <div class="footer-logos">
-          <img src="assets/faculty-logo-transparent.png" alt="ตราคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ" class="footer-faculty-logo" />
-          <img src="assets/logo-smo-transparent.png" alt="โลโก้ SMO" class="footer-smo-logo" />
-        </div>
-        <div class="logo">
-          <span class="logo-text">
-              <strong>สโมสรนักศึกษา HST</strong>
-              <small>Faculty of Health Science Technology</small>
-            </span>
+          <div class="brand" style="color:#fff;">
+            <img src="../assets/logo-smo-transparent.png" alt="SMO HST" style="background:#fff; border-radius:8px; padding:4px;" />
+            <span class="brand-text"><strong>SMO HST Space</strong><small class="th">คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ</small><small class="en">Faculty of Health Science Technology</small></span>
           </div>
-          <p class="th">สโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ<br>ราชวิทยาลัยจุฬาภรณ์</p>
+          <p class="th">สโมสรนักศึกษาคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ราชวิทยาลัยจุฬาภรณ์</p>
           <p class="en">HST Student Association, Chulabhorn Royal Academy</p>
-          <div class="footer-social">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-line"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-          </div>
         </div>
         <div class="footer-col">
-          <h4 class="th">เมนูหลัก</h4>
-          <h4 class="en">Main Menu</h4>
+          <h4 class="th">เมนู</h4><h4 class="en">Menu</h4>
           <ul>
-            <li><a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a></li>
+            <li><a href="index.html"><span class="th">หน้าหลัก</span><span class="en">Home</span></a></li>
+            <li><a href="tools.html"><span class="th">บริการนักศึกษา</span><span class="en">Services</span></a></li>
+            <li><a href="activities.html"><span class="th">ปฏิทิน</span><span class="en">Calendar</span></a></li>
+            <li><a href="academic.html"><span class="th">ปฏิทินการศึกษา</span><span class="en">Academic Calendar</span></a></li>
+            <li><a href="contact.html"><span class="th">แจ้งปัญหา</span><span class="en">Report</span></a></li>
             <li><a href="about.html"><span class="th">เกี่ยวกับเรา</span><span class="en">About</span></a></li>
-            <li><a href="https://hst.cra.ac.th/" target="_blank" rel="noopener"><span class="th">ข่าวประชาสัมพันธ์</span><span class="en">News</span></a></li>
-            <li><a href="activities.html"><span class="th">กิจกรรม</span><span class="en">Activities</span></a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 class="th">บริการ</h4>
-          <h4 class="en">Services</h4>
+          <h4 class="th">ทางลัด</h4><h4 class="en">Quick Links</h4>
           <ul>
-            <li><a href="services.html#registration"><span class="th">ระบบลงทะเบียน</span><span class="en">Registration</span></a></li>
-            <li><a href="services.html#elearning">งานทะเบียนนักศึกษา PCCMS</a></li>
-            <li><a href="services.html#library"><span class="th">ห้องสมุด</span><span class="en">Library</span></a></li>          </ul>
+            <li><a href="https://hst.cra.ac.th" target="_blank" rel="noopener">เว็บคณะ HST</a></li>
+          </ul>
         </div>
         <div class="footer-col">
-          <h4 class="th">ติดต่อเรา</h4>
-          <h4 class="en">Contact</h4>
+          <h4 class="th">ติดต่อ</h4><h4 class="en">Contact</h4>
           <ul>
-            <li><i class="fa-solid fa-location-dot"></i>
-              <span class="th"> 906 ถ.กำแพงเพชร 6 หลักสี่ กทม.</span>
-              <span class="en"> 906 Kamphaeng Phet 6, Bangkok</span>
-            </li>
-            <li><i class="fa-solid fa-phone"></i> <a href="tel:022576000">02-257-6000</a></li>
             <li><i class="fa-solid fa-envelope"></i> <a href="mailto:smohst2026@gmail.com">smohst2026@gmail.com</a></li>
+            <li><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/smo.hst/" target="_blank" rel="noopener">@smo.hst</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span class="th">© 2026 สโมสรนักศึกษา HST — สงวนลิขสิทธิ์</span>
-        <span class="en">© 2026 HST Student Association — All rights reserved</span>
-      </div>
+      <div class="footer-bottom"><span class="th">© 2026 SMO HST Space</span><span class="en">© 2026 SMO HST Space</span></div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=1779500000"></script>
-  <script src="js/calendar.js?v=1779500000"></script>
+  <script src="js/portal.js?v=12"></script>
+  <script src="../js/calendar.js?v=1780500000"></script>
 </body>
 </html>
