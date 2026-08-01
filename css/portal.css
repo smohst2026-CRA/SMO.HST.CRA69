@@ -1204,3 +1204,114 @@ h1,h2,h3,h4,h5,h6,p,span,a,li,strong,em,small,label { overflow-wrap: break-word;
   .hero { padding: 48px 0 40px; }
   .brand-text small { display: none; }
 }
+
+/* ===================================================================
+   RESPONSIVE TUNING — iPad / แท็บเล็ต / โทรศัพท์
+   =================================================================== */
+
+/* ---- iPad / แท็บเล็ต (≤ 1024px) ---- */
+@media (max-width: 1024px) {
+  .container { padding: 0 18px; }
+  .section { padding: 60px 0; }
+  .section-heading { font-size: clamp(1.5rem, 3.4vw, 2rem); }
+  /* โลโก้แบรนด์บนแท็บเล็ต */
+  .brand img { width: 36px; height: 36px; }
+  .brand-text strong { font-size: 0.95rem; }
+  /* การ์ดบริการ/เครื่องมือ 2 คอลัมน์ */
+  .tool-grid { grid-template-columns: repeat(2, 1fr); }
+  .dept-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-preview { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---- โทรศัพท์แนวนอน / แท็บเล็ตเล็ก (≤ 768px) ---- */
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .section { padding: 46px 0; }
+
+  /* Ribbon: ซ่อนชื่อสถาบันยาว เหลือแค่ธงภาษา */
+  .ribbon { font-size: 0.72rem; }
+  .ribbon-inner { justify-content: space-between; gap: 8px; }
+
+  /* Header / brand */
+  .brand-text strong { font-size: 0.9rem; }
+  .brand img { width: 34px; height: 34px; }
+
+  /* Hero */
+  .hero h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .hero p.lead { font-size: 0.98rem; }
+  .hero-card { padding: 22px; }
+  .hero-card .quick-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Section headings */
+  .section-heading { font-size: clamp(1.4rem, 5vw, 1.8rem); }
+  .section-sub { font-size: 0.95rem; }
+  .section-header { gap: 12px; }
+
+  /* Slide banner */
+  .slide-banner { height: 300px; }
+  .slide-caption { padding: 22px 20px 44px; }
+  .slide-caption h3 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+  .slide-caption p { font-size: 0.9rem; }
+
+  /* Buttons เต็มความกว้างพอดีมือ */
+  .btn { padding: 11px 20px; font-size: 0.92rem; }
+
+  /* Grids → การ์ดใหญ่ขึ้น อ่านง่าย */
+  .tool-grid { grid-template-columns: 1fr; }
+  .dept-grid { grid-template-columns: 1fr; }
+  .numbered { grid-template-columns: 1fr; }
+  .team-preview { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- โทรศัพท์ (≤ 480px) ---- */
+@media (max-width: 480px) {
+  .container { padding: 0 14px; }
+  .section { padding: 38px 0; }
+
+  /* ซ่อนข้อความสถาบันยาวใน ribbon เหลือธง TH/EN */
+  .ribbon-inner > span:first-child { display: none; }
+  .ribbon-inner { justify-content: flex-end; }
+
+  /* Hero */
+  .hero { padding: 30px 0 26px; }
+  .hero h1 { font-size: clamp(1.45rem, 7vw, 1.9rem); line-height: 1.25; }
+  .hero-badge { font-size: 0.76rem; padding: 5px 12px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { justify-content: center; }
+  .hero-card { padding: 18px; }
+  .hero-card .quick-grid { grid-template-columns: 1fr; }
+
+  /* Slide banner เตี้ยลงนิด + caption อ่านง่าย */
+  .slide-banner { height: 300px; border-radius: var(--r-lg); }
+  .slide-caption { padding: 20px 16px 42px; }
+  .slide-caption h3 { font-size: 1.2rem; }
+  .slide-caption .slide-cta { padding: 8px 16px; font-size: 0.84rem; }
+  .slide-dots { left: 16px; bottom: 14px; }
+
+  /* Section */
+  .section-heading { font-size: 1.35rem; }
+  .section-eyebrow { font-size: 0.85rem; }
+
+  /* ทีมงาน 1 คอลัมน์ กว้างเต็ม อ่านชื่อง่าย */
+  .team-preview { grid-template-columns: 1fr; }
+  .member-avatar { aspect-ratio: 16/11; }
+
+  /* Filter chips เล็กลงพอดีจอ */
+  .filter-bar { border-radius: var(--r-lg); padding: 10px 12px; }
+  .filter-chip { font-size: 0.78rem; padding: 5px 12px; }
+  .filter-search { min-width: 120px; font-size: 0.88rem; }
+
+  /* การ์ด coming soon แนวยาว → แนวตั้งกึ่งกลางแล้ว (มีใน .tool-wide) */
+  .tool-card { padding: 18px; }
+
+  /* Vision quote */
+  .vision-quote { padding: 34px 22px; }
+  .vision-quote blockquote { font-size: 1.1rem; }
+}
+
+/* ---- โทรศัพท์เล็กมาก (≤ 360px) ---- */
+@media (max-width: 360px) {
+  .brand-text strong { font-size: 0.82rem; }
+  .slide-banner { height: 320px; }
+  .section-heading { font-size: 1.25rem; }
+}
