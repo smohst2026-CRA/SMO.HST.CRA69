@@ -28,89 +28,77 @@
 
   /* ====== EVENT DATA — เพิ่ม/แก้ไขกิจกรรมได้ที่นี่ ====== */
   const EVENTS = {
-    /* ===== ภาคเรียนที่ 2/2568 ===== */
-    "2026-03-11": {
-      th: { title: "โครงการเพื่อเรียนรู้ทักษะชีวิตและการดูแลสุขภาพจิต (Mental Health Leader)", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "วิชาการ / สุขภาพจิต" },
-      en: { title: "Mental Health Leader: Life Skills & Mental Health Care Workshop", time: "All day", place: "Faculty of Health Science Technology", category: "Academic / Wellness" }
-    },
-    "2026-03-25": {
-      th: { title: "โครงการสุขภาพและชีวิตกับเทคโนโลยีปัญญาประดิษฐ์", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "วิชาการ" },
-      en: { title: "Health & Life with AI Technology Workshop", time: "All day", place: "Faculty of Health Science Technology", category: "Academic" }
-    },
-    "2026-04-22": {
-      th: { title: "เลือกตั้งสโมสรนักศึกษาชุดใหม่ ปีการศึกษา 2569", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "เลือกตั้ง" },
-      en: { title: "Student Association Election for Academic Year 2026", time: "All day", place: "Faculty of Health Science Technology", category: "Election" }
-    },
-    "2026-04-25": {
-      th: { title: "โครงการปัจฉิมนิเทศนักศึกษา ประจำปีการศึกษา 2568", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "พิธีการ" },
-      en: { title: "Senior Farewell Ceremony — Academic Year 2025", time: "All day", place: "Faculty of Health Science Technology", category: "Ceremony" }
-    },
-
-    /* ===== ประชุมสโมสร (ภายในเดือน พ.ค.) ===== */
-    "2026-05-08": {
-      th: { title: "ประชุมโครงการ และกิจกรรมภายในคณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", time: "19.00 - 21.00", place: "MS Teams (Online)", category: "ประชุม" },
-      en: { title: "Faculty Internal Project & Activities Meeting", time: "19:00 - 21:00", place: "MS Teams (Online)", category: "Meeting" }
-    },
-    "2026-05-10": {
-      th: { title: "ประชุมคณะกรรมการสโมสร — การส่งมอบวาระใหม่", time: "19.00 - 21.00", place: "MS Teams (Online)", category: "ประชุม" },
-      en: { title: "Student Association Committee Meeting — New Term Handover", time: "19:00 - 21:00", place: "MS Teams (Online)", category: "Meeting" }
-    },
-    "2026-05-11": {
-      th: { title: "ปิดภาคการศึกษาที่ 2/2568", time: "—", place: "—", category: "ปฏิทินการศึกษา" },
-      en: { title: "End of Semester 2/2025", time: "—", place: "—", category: "Academic Calendar" }
-    },
-
-    /* ===== ปีการศึกษา 2569 ===== */
+    /* ===== ปีการศึกษา 2569 (ตามปฏิทินกิจกรรมพัฒนานักศึกษา คณะ HST) ===== */
     "2026-07-20": {
-      th: { title: "โครงการปฐมนิเทศนักศึกษาใหม่ ราชวิทยาลัยจุฬาภรณ์ ปีการศึกษา 2569", time: "ตลอดวัน", place: "ราชวิทยาลัยจุฬาภรณ์", category: "ปฐมนิเทศ" },
-      en: { title: "CRA Freshman Orientation — Academic Year 2026", time: "All day", place: "Chulabhorn Royal Academy", category: "Orientation" }
+      th: { title: "ทำบุญตักบาตร & ปฐมนิเทศนักศึกษาใหม่ ราชวิทยาลัยจุฬาภรณ์ ปีการศึกษา 2569", time: "ตลอดวัน", place: "ราชวิทยาลัยจุฬาภรณ์", category: "ปฐมนิเทศ / รับน้อง" },
+      en: { title: "Merit-making & CRA Freshman Orientation 2026", time: "All day", place: "Chulabhorn Royal Academy", category: "Orientation / Welcome" }
+    },
+    "2026-07-23": {
+      th: { title: "รับน้องเข้าหอพักนักศึกษา ราชวิทยาลัยจุฬาภรณ์ 2569", time: "ตลอดวัน", place: "หอพักนักศึกษา ราชวิทยาลัยจุฬาภรณ์", category: "ปฐมนิเทศ / รับน้อง" },
+      en: { title: "Dormitory Welcome for New Students, CRA 2026", time: "All day", place: "CRA Student Dormitory", category: "Orientation / Welcome" }
+    },
+    "2026-08-01": {
+      th: { title: "กิจกรรมแรกพบเด็กพ่อ CRA'69", time: "ตลอดวัน", place: "ราชวิทยาลัยจุฬาภรณ์", category: "ปฐมนิเทศ / รับน้อง" },
+      en: { title: "First Meet — CRA'69 Freshmen", time: "All day", place: "Chulabhorn Royal Academy", category: "Orientation / Welcome" }
     },
     "2026-08-03": {
       th: { title: "เปิดภาคการศึกษาที่ 1/2569", time: "—", place: "—", category: "ปฏิทินการศึกษา" },
       en: { title: "Start of Semester 1/2026", time: "—", place: "—", category: "Academic Calendar" }
     },
     "2026-08-05": {
-      th: { title: "โครงการปฐมนิเทศนักศึกษาใหม่และแรกพบน้องพี่ (First Meet HST)", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "รับน้อง / ปฐมนิเทศ" },
-      en: { title: "First Meet HST — New Student Orientation", time: "All day", place: "Faculty of Health Science Technology", category: "Welcome / Orientation" }
+      th: { title: "โครงการปฐมนิเทศนักศึกษาใหม่และแรกพบน้องพี่ (First Meet HST)", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "ปฐมนิเทศ / รับน้อง" },
+      en: { title: "First Meet HST — New Student Orientation", time: "All day", place: "Faculty of Health Science Technology", category: "Orientation / Welcome" }
     },
     "2026-08-15": {
-      th: { title: "สานสัมพันธ์จุฬาภรณ์ รุ่นที่ 10 (วันที่ 1/2)", time: "ตลอดวัน", place: "ราชวิทยาลัยจุฬาภรณ์", category: "ค่าย / สัมพันธ์" },
+      th: { title: "โครงการสานสัมพันธ์จุฬาภรณ์ รุ่นที่ 10 (วันที่ 1/2)", time: "ตลอดวัน", place: "ราชวิทยาลัยจุฬาภรณ์", category: "ค่าย / สัมพันธ์" },
       en: { title: "Chulabhorn Bonding Camp Gen 10 (Day 1/2)", time: "All day", place: "Chulabhorn Royal Academy", category: "Camp / Bonding" }
+    },
+    "2026-08-16": {
+      th: { title: "โครงการสานสัมพันธ์จุฬาภรณ์ รุ่นที่ 10 (วันที่ 2/2)", time: "ตลอดวัน", place: "ราชวิทยาลัยจุฬาภรณ์", category: "ค่าย / สัมพันธ์" },
+      en: { title: "Chulabhorn Bonding Camp Gen 10 (Day 2/2)", time: "All day", place: "Chulabhorn Royal Academy", category: "Camp / Bonding" }
     },
     "2026-08-19": {
       th: { title: "พิธีมอบเสื้อกาวน์และชุดปฏิบัติงาน คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "พิธีการ" },
       en: { title: "White Coat & Uniform Ceremony — Faculty of HST", time: "All day", place: "Faculty of Health Science Technology", category: "Ceremony" }
     },
+    "2026-08-22": {
+      th: { title: "โครงการจิตอาสา \"สานอาสาจุฬาภรณ์\" กิจกรรมช่างไม้จิตอาสา (วันที่ 1/2)", time: "ตลอดวัน", place: "ราชวิทยาลัยจุฬาภรณ์", category: "จิตอาสา / บำเพ็ญประโยชน์" },
+      en: { title: "Chulabhorn Volunteer — Carpentry Service (Day 1/2)", time: "All day", place: "Chulabhorn Royal Academy", category: "Volunteer" }
+    },
+    "2026-08-29": {
+      th: { title: "โครงการจิตอาสา \"สานอาสาจุฬาภรณ์\" กิจกรรมช่างไม้จิตอาสา (วันที่ 2/2)", time: "ตลอดวัน", place: "ราชวิทยาลัยจุฬาภรณ์", category: "จิตอาสา / บำเพ็ญประโยชน์" },
+      en: { title: "Chulabhorn Volunteer — Carpentry Service (Day 2/2)", time: "All day", place: "Chulabhorn Royal Academy", category: "Volunteer" }
+    },
+    "2026-09-03": {
+      th: { title: "พิธีพระราชทานโอวาทนักศึกษาใหม่ ปีการศึกษา 2569", time: "ตลอดวัน", place: "ราชวิทยาลัยจุฬาภรณ์", category: "พิธีการ" },
+      en: { title: "Royal Address for New Students 2026", time: "All day", place: "Chulabhorn Royal Academy", category: "Ceremony" }
+    },
     "2026-09-23": {
       th: { title: "โครงการไหว้ครู คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "พิธีการ" },
       en: { title: "Wai Khru Ceremony — Faculty of HST", time: "All day", place: "Faculty of Health Science Technology", category: "Ceremony" }
     },
-    "2026-09-03": {
-      th: { title: "พิธีพระราชทานโอวาทนักศึกษาใหม่ ปีการศึกษา 2569 (รอกำหนดวันที่)", time: "—", place: "ราชวิทยาลัยจุฬาภรณ์", category: "พิธีการ" },
-      en: { title: "Royal Address for New Students 2026 (Date TBA)", time: "—", place: "Chulabhorn Royal Academy", category: "Ceremony" }
-    },
-    "2026-10-10": {
-      th: { title: "โครงการเปิดบ้าน (Open House) คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ร่วมกับฝ่ายประชาสัมพันธ์ฯ (รอกำหนดวันที่)", time: "—", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "ประชาสัมพันธ์" },
-      en: { title: "HST Open House (with PR Division) — Date TBA", time: "—", place: "Faculty of Health Science Technology", category: "PR / Outreach" }
+    "2026-10-01": {
+      th: { title: "โครงการเปิดบ้าน (Open House) คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ ร่วมกับฝ่ายประชาสัมพันธ์และการตลาด รจภ. (เดือนตุลาคม — รอกำหนดวัน)", time: "—", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "ประชาสัมพันธ์" },
+      en: { title: "HST Open House (with CRA PR & Marketing) — October, date TBA", time: "—", place: "Faculty of Health Science Technology", category: "PR / Outreach" }
     },
     "2026-10-17": {
-      th: { title: "โครงการ 1st HST Game กีฬาสานสัมพันธ์ 2026", time: "ตลอดวัน × 2 วัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "กีฬาและนันทนาการ" },
-      en: { title: "1st HST Game", time: "2 days", place: "Faculty of HST", category: "Sports" }
+      th: { title: "การแข่งขันกีฬาสานสัมพันธ์ HST (1st HST Game) (วันที่ 1/2)", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "กีฬา" },
+      en: { title: "1st HST Game — Sports & Bonding (Day 1/2)", time: "All day", place: "Faculty of Health Science Technology", category: "Sports" }
+    },
+    "2026-10-18": {
+      th: { title: "การแข่งขันกีฬาสานสัมพันธ์ HST (1st HST Game) (วันที่ 2/2)", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "กีฬา" },
+      en: { title: "1st HST Game — Sports & Bonding (Day 2/2)", time: "All day", place: "Faculty of Health Science Technology", category: "Sports" }
     },
     "2026-10-28": {
       th: { title: "โครงการเรียนรู้ AI เพื่อปรับตัวสู่โลกใหม่ เสริมทักษะในยุคดิจิทัล", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "วิชาการ" },
       en: { title: "Learning AI for the New World — Digital Skills Workshop", time: "All day", place: "Faculty of Health Science Technology", category: "Academic" }
     },
-    "2026-11-18": {
-      th: { title: "โครงการจุดประกายวิทยาศาสตร์สุขภาพ", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "วิชาการ" },
-      en: { title: "Spark of Health Science Project", time: "All day", place: "Faculty of Health Science Technology", category: "Academic" }
-    },
-    "2026-12-08": {
+    "2026-12-07": {
       th: { title: "ปิดภาคการศึกษาที่ 1/2569", time: "—", place: "—", category: "ปฏิทินการศึกษา" },
       en: { title: "End of Semester 1/2026", time: "—", place: "—", category: "Academic Calendar" }
     },
 
-    /* ===== ภาคเรียนที่ 2/2569 (ปี พ.ศ. 2570 = ค.ศ. 2027) ===== */
+    /* ===== ภาคเรียนที่ 2/2569 (พ.ศ. 2570 = ค.ศ. 2027) ===== */
     "2027-01-04": {
       th: { title: "เปิดภาคการศึกษาที่ 2/2569", time: "—", place: "—", category: "ปฏิทินการศึกษา" },
       en: { title: "Start of Semester 2/2026", time: "—", place: "—", category: "Academic Calendar" }
@@ -123,21 +111,21 @@
       th: { title: "โครงการพัฒนาบุคลิกภาพและการสร้างภาพลักษณ์เพื่อเสริมความมั่นใจสู่ความเป็นมืออาชีพ", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "พัฒนาตนเอง" },
       en: { title: "Personality Development & Professional Image Building", time: "All day", place: "Faculty of Health Science Technology", category: "Self-development" }
     },
-    "2027-02-24": {
+    "2027-02-10": {
       th: { title: "โครงการส่งเสริมพัฒนานักศึกษาเพื่อสืบสานและรักษาศิลปวัฒนธรรม สโมสรนักศึกษา HST", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "ศิลปวัฒนธรรม" },
       en: { title: "Student Development for Cultural Preservation by HST Student Association", time: "All day", place: "Faculty of Health Science Technology", category: "Arts & Culture" }
     },
-    "2027-04-21": {
-      th: { title: "โครงการปัจฉิมนิเทศนักศึกษา ประจำปีการศึกษา 2569", time: "ตลอดวัน", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "พิธีการ" },
-      en: { title: "Senior Farewell Ceremony — Academic Year 2026", time: "All day", place: "Faculty of Health Science Technology", category: "Ceremony" }
+    "2027-04-30": {
+      th: { title: "โครงการปัจฉิมนิเทศนักศึกษา ประจำปีการศึกษา 2569 (เมษายน – พฤษภาคม 2570)", time: "—", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "พิธีการ" },
+      en: { title: "Senior Farewell Ceremony — Academic Year 2026 (Apr–May 2027)", time: "—", place: "Faculty of Health Science Technology", category: "Ceremony" }
     },
-    "2027-05-11": {
+    "2027-05-10": {
       th: { title: "ปิดภาคการศึกษาที่ 2/2569", time: "—", place: "—", category: "ปฏิทินการศึกษา" },
       en: { title: "End of Semester 2/2026", time: "—", place: "—", category: "Academic Calendar" }
     },
-    "2027-04-01": {
-      th: { title: "เลือกตั้งสโมสรนักศึกษา ปีการศึกษา 2570 (รอกำหนดวันที่)", time: "—", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "เลือกตั้ง" },
-      en: { title: "Student Association Election 2027 (Date TBA)", time: "—", place: "Faculty of Health Science Technology", category: "Election" }
+    "2027-05-15": {
+      th: { title: "เลือกตั้งสโมสรนักศึกษา ปีการศึกษา 2570 (เดือนพฤษภาคม — รอกำหนดวัน)", time: "—", place: "คณะเทคโนโลยีวิทยาศาสตร์สุขภาพ", category: "เลือกตั้ง" },
+      en: { title: "Student Association Election 2027 (May, date TBA)", time: "—", place: "Faculty of Health Science Technology", category: "Election" }
     }
   };
 
@@ -154,6 +142,7 @@
     development: { color: '#059669', bg: '#d1fae5', icon: 'fa-user-graduate',      th: 'พัฒนาตนเอง',        en: 'Self-Development' },
     pr:          { color: '#9333ea', bg: '#f3e8ff', icon: 'fa-bullhorn',           th: 'ประชาสัมพันธ์',     en: 'PR / Outreach' },
     academic_cal:{ color: '#475569', bg: '#e2e8f0', icon: 'fa-calendar-days',      th: 'ปฏิทินการศึกษา',    en: 'Academic Calendar' },
+    sports:      { color: '#ea580c', bg: '#ffedd5', icon: 'fa-medal',              th: 'กีฬา',              en: 'Sports' },
     other:       { color: '#0c3b2e', bg: '#fef9c3', icon: 'fa-circle-info',        th: 'อื่นๆ',             en: 'Other' }
   };
 
@@ -166,6 +155,7 @@
     if (s.includes('พิธีการ') || s.includes('ceremony')) return 'ceremony';
     if (s.includes('ประชุม') || s.includes('meeting')) return 'meeting';
     if (s.includes('เลือกตั้ง') || s.includes('election')) return 'election';
+    if (s.includes('กีฬา') || s.includes('sport')) return 'sports';
     if (s.includes('ค่าย') || s.includes('สัมพันธ์') || s.includes('camp') || s.includes('bonding')) return 'camp';
     if (s.includes('จิตอาสา') || s.includes('บำเพ็ญ') || s.includes('volunteer')) return 'volunteer';
     if (s.includes('ศิลปวัฒนธรรม') || s.includes('arts') || s.includes('culture')) return 'culture';
