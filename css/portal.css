@@ -210,9 +210,9 @@ h1,h2,h3,h4,h5,h6,p,span,a,li,strong,em,small,label { overflow-wrap: break-word;
   .nav-links {
     position: fixed;
     top: var(--header-h);
-    right: -100%;
-    width: 82%;
-    max-width: 320px;
+    right: 0;                         /* ยึดขอบขวาเสมอ ไม่หลุดออกนอกจอ */
+    width: 80%;
+    max-width: 300px;
     height: calc(100vh - var(--header-h));
     background: var(--white);
     border-left: 1px solid var(--border);
@@ -220,13 +220,30 @@ h1,h2,h3,h4,h5,h6,p,span,a,li,strong,em,small,label { overflow-wrap: break-word;
     align-items: flex-start;
     padding: 18px;
     gap: 2px;
-    transition: right var(--tr-slow);
+    transform: translateX(105%);     /* ซ่อนด้วย transform (ไม่สร้าง scroll เกินจอ) */
+    transition: transform var(--tr-slow);
     box-shadow: var(--sh-lg);
     overflow-y: auto;
+    z-index: 120;
   }
-  .nav-links.open { right: 0; }
+  .nav-links.open { transform: translateX(0); }
   .nav-links a { width: 100%; border-radius: 10px; padding: 12px 14px; }
+
+  /* พื้นหลังทึบเมื่อเปิดเมนู (แตะเพื่อปิด) */
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--tr), visibility var(--tr);
+    z-index: 110;
+  }
+  .nav-backdrop.show { opacity: 1; visibility: visible; }
 }
+@media (min-width: 1025px) { .nav-backdrop { display: none; } }
 
 /* ---------- LAYOUT ---------- */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 22px; }
@@ -516,7 +533,7 @@ h1,h2,h3,h4,h5,h6,p,span,a,li,strong,em,small,label { overflow-wrap: break-word;
 /* ---------- CARDS: TOOL / ANNOUNCEMENT / DEPARTMENT ---------- */
 .tool-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 18px;
 }
 .tool-card {
@@ -761,7 +778,7 @@ h1,h2,h3,h4,h5,h6,p,span,a,li,strong,em,small,label { overflow-wrap: break-word;
 /* ---------- DEPARTMENT GRID ---------- */
 .dept-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 16px;
 }
 .dept-card {
@@ -837,7 +854,7 @@ h1,h2,h3,h4,h5,h6,p,span,a,li,strong,em,small,label { overflow-wrap: break-word;
 /* ---------- VISION / MISSION / POLICY ---------- */
 .numbered {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 22px;
 }
 .num-item {
@@ -945,7 +962,7 @@ h1,h2,h3,h4,h5,h6,p,span,a,li,strong,em,small,label { overflow-wrap: break-word;
 }
 .team-grid-4 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 18px;
 }
 .team-grid-single {
@@ -965,7 +982,7 @@ h1,h2,h3,h4,h5,h6,p,span,a,li,strong,em,small,label { overflow-wrap: break-word;
 /* base card (used for both preview + full team) */
 .team-preview {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 18px;
 }
 .member-card {
@@ -1314,4 +1331,20 @@ h1,h2,h3,h4,h5,h6,p,span,a,li,strong,em,small,label { overflow-wrap: break-word;
   .brand-text strong { font-size: 0.82rem; }
   .slide-banner { height: 320px; }
   .section-heading { font-size: 1.25rem; }
+}
+
+
+/* ===== ANTI-OVERFLOW GUARD (กันของล้นเกินขอบจอบนมือถือ/แท็บเล็ต) ===== */
+html { overflow-x: hidden; max-width: 100%; }
+body { overflow-x: hidden; max-width: 100%; }
+/* กัน flex/grid children ดันล้น */
+.hero-inner > *, .fac-news > *, .cal-layout > *, .cal-preview > *,
+.section-header > *, .tool-wide > *, .announce > * { min-width: 0; }
+/* สื่อ/ตารางไม่เกินจอ */
+img, svg, video, iframe, table { max-width: 100%; }
+/* คอนเทนเนอร์หลักไม่เกินจอ */
+.container, .section, .hero, .slide-banner, .board, .form-card, .fac-news { max-width: 100%; }
+@media (max-width: 480px) {
+  .tool-grid, .dept-grid, .numbered, .team-preview,
+  .team-grid-2, .team-grid-3, .team-grid-4 { grid-template-columns: 1fr !important; }
 }
