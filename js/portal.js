@@ -12,23 +12,33 @@
   const menuBtn = document.getElementById('menuBtn');
   const nav = document.getElementById('navLinks');
   if (menuBtn && nav) {
-    menuBtn.addEventListener('click', () => {
-      nav.classList.toggle('open');
+    // สร้างพื้นหลังทึบสำหรับเมนูมือถือ
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
+    function openMenu() {
+      nav.classList.add('open');
+      backdrop.classList.add('show');
       const icon = menuBtn.querySelector('i');
-      if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
-      }
+      if (icon) { icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark'); }
+    }
+    function closeMenu() {
+      nav.classList.remove('open');
+      backdrop.classList.remove('show');
+      const icon = menuBtn.querySelector('i');
+      if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-xmark'); }
+    }
+    menuBtn.addEventListener('click', () => {
+      nav.classList.contains('open') ? closeMenu() : openMenu();
     });
+    backdrop.addEventListener('click', closeMenu);
+    // ปิดเมนูเมื่อกดลิงก์ (มือถือ/แท็บเล็ต)
     nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        if (window.innerWidth <= 1024) {
-          nav.classList.remove('open');
-          const icon = menuBtn.querySelector('i');
-          if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-xmark'); }
-        }
-      });
+      a.addEventListener('click', () => { if (window.innerWidth <= 1024) closeMenu(); });
     });
+    // ปิดเมนูด้วยปุ่ม Esc
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   }
 
   /* ---------- Language switch (shared with v1 storage key) ---------- */
