@@ -227,15 +227,32 @@ h1,h2,h3,h4,h5,h6,p,span,a,li,strong,em,small,label { overflow-wrap: break-word;
     z-index: 120;
   }
   .nav-links.open { transform: translateX(0); }
-  .nav-links a { width: 100%; border-radius: 10px; padding: 12px 14px; }
+  /* เมนูมือถือ: รายการแบบลิสต์สะอาดตา */
+  .nav-links a {
+    width: 100%;
+    border-radius: 8px;
+    padding: 13px 14px;
+    font-size: 0.95rem;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+  }
+  .nav-links a:last-child { border-bottom: none; }
+  .nav-links a:hover { background: var(--bg-alt); color: var(--green); }
+  /* active แบบเบา: ไฮไลต์อ่อน + ขีดเขียวด้านซ้าย (ไม่ใช่บล็อกเขียวเต็ม) */
+  .nav-links a.active {
+    color: var(--green);
+    background: var(--yellow-soft);
+    border-left: 3px solid var(--green);
+    padding-left: 12px;
+    font-weight: 700;
+  }
 
-  /* พื้นหลังทึบเมื่อเปิดเมนู (แตะเพื่อปิด) */
+  /* พื้นหลังทึบเมื่อเปิดเมนู (แตะเพื่อปิด) — ทึบอ่อน ไม่เบลอ */
   .nav-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.5);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    background: rgba(15, 23, 42, 0.35);
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--tr), visibility var(--tr);
